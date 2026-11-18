@@ -1,0 +1,2917 @@
+
+/* ==================================================
+   FARAHVERSE
+   FRIENDSHIP UNIVERSE
+   MIDNIGHT NAVY / ELECTRIC INDIGO / ICY CYAN
+================================================== */
+
+:root {
+    --fr-bg: #101A38;
+    --fr-deep: #080F24;
+    --fr-panel: #172448;
+    --fr-panel-light: #202F58;
+    --fr-indigo: #5865D9;
+    --fr-purple: #A99BFF;
+    --fr-cyan: #69D9F5;
+    --fr-white: #F3F5FF;
+    --fr-muted: #AAB6D5;
+    --fr-border: rgba(170,190,255,0.17);
+    --fr-rose: #D9A9D0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body.friends-body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--fr-deep) !important;
+    color: var(--fr-white);
+}
+
+.friends-body * {
+    box-sizing: border-box;
+}
+
+.friends-body a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.friends-page {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* ==================================================
+   01. BACKGROUND UNIVERSE
+================================================== */
+
+.friends-universe-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 15%,
+            rgba(88,101,217,0.17),
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 90% 60%,
+            rgba(105,217,245,0.09),
+            transparent 35%
+        ),
+        #080F24;
+}
+
+.friends-grid-bg {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(140,160,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(140,160,255,0.035) 1px, transparent 1px);
+
+    background-size: 55px 55px;
+
+    mask-image: linear-gradient(to bottom,black,transparent 90%);
+}
+
+.friends-nebula {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+
+    animation: friendsNebulaDrift 18s ease-in-out infinite alternate;
+}
+
+.friends-nebula-one {
+    top: -220px;
+    left: -150px;
+    background: #5865D9;
+}
+
+.friends-nebula-two {
+    right: -250px;
+    bottom: -100px;
+    background: #A99BFF;
+    animation-delay: 5s;
+}
+
+@keyframes friendsNebulaDrift {
+    to {
+        transform: translate(70px,-45px) scale(1.2);
+    }
+}
+
+.friends-star-field {
+    position: absolute;
+    inset: 0;
+}
+
+.friends-star-particle {
+    position: absolute;
+    color: rgba(210,225,255,0.7);
+    animation: friendsTwinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes friendsTwinkle {
+    from {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* ==================================================
+   02. NAVIGATION
+================================================== */
+
+.friends-body .farah-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1500;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 16px 5%;
+
+    background: rgba(8,15,36,0.88);
+    border-bottom: 1px solid var(--fr-border);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+}
+
+.friends-body .farah-logo {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    color: var(--fr-white) !important;
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.friends-body .farah-logo > span {
+    display: inline;
+    color: var(--fr-cyan);
+}
+
+.friends-body .farah-logo small {
+    color: var(--fr-muted);
+    font-size: 7px;
+    letter-spacing: 2px;
+}
+
+.friends-body .farah-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.friends-body .farah-nav-links a {
+    padding: 10px 11px;
+
+    color: #B6C1DD !important;
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.friends-body .farah-nav-links a:hover,
+.friends-body .farah-nav-links a.active {
+    background: rgba(88,101,217,0.19);
+    color: var(--fr-cyan) !important;
+}
+
+.friends-body .farah-menu-toggle {
+    display: none;
+
+    width: 43px;
+    height: 43px;
+    padding: 10px;
+
+    border: 1px solid var(--fr-border);
+    border-radius: 12px;
+
+    background: var(--fr-panel);
+    cursor: pointer;
+}
+
+.friends-body .farah-menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 5px auto;
+
+    background: var(--fr-cyan);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.friends-body .farah-menu-toggle.open span:first-child {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.friends-body .farah-menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.friends-body .farah-menu-toggle.open span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* PROGRESS */
+
+.friends-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+
+    width: 0%;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        var(--fr-cyan),
+        var(--fr-indigo),
+        var(--fr-purple)
+    );
+
+    box-shadow: 0 0 12px rgba(105,217,245,0.5);
+}
+
+/* ==================================================
+   03. HERO
+================================================== */
+
+.friends-hero {
+    position: relative;
+    min-height: 760px;
+    padding: 30px 7% 90px;
+}
+
+.friends-system-status {
+    max-width: 1400px;
+    margin: auto;
+    padding: 14px 0 22px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    border-bottom: 1px solid var(--fr-border);
+}
+
+.friends-system-status > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--fr-cyan);
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.friends-status-dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background: #67E3B3;
+    box-shadow: 0 0 12px #67E3B3;
+
+    animation: friendsStatusPulse 2s infinite;
+}
+
+@keyframes friendsStatusPulse {
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.friends-system-status > span:last-child {
+    color: var(--fr-muted);
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.friends-hero-layout {
+    max-width: 1400px;
+    margin: auto;
+    padding-top: 65px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.friends-hero-content {
+    position: relative;
+    z-index: 5;
+    max-width: 650px;
+}
+
+.friends-overline {
+    color: var(--fr-cyan);
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 28px;
+}
+
+.friends-greeting {
+    color: var(--fr-purple);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+    margin-bottom: 20px;
+}
+
+.friends-hero-content h1 {
+    color: var(--fr-white);
+    font-size: clamp(43px,5.5vw,76px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+    margin: 0 0 23px;
+}
+
+.friends-hero-content h1 span {
+    background: linear-gradient(
+        100deg,
+        var(--fr-cyan),
+        var(--fr-purple)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.friends-typing-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    min-height: 27px;
+    margin-bottom: 23px;
+
+    color: var(--fr-purple);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.friends-cursor {
+    color: var(--fr-cyan);
+    animation: friendsCursorBlink 0.8s infinite;
+}
+
+@keyframes friendsCursorBlink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.friends-introduction {
+    max-width: 600px;
+
+    color: var(--fr-muted);
+    font-size: 13px;
+    line-height: 2;
+
+    margin-bottom: 18px;
+}
+
+.friends-motto {
+    color: var(--fr-cyan);
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin: 25px 0;
+}
+
+.friends-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.friends-primary-button,
+.friends-outline-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    padding: 15px 21px;
+
+    border-radius: 10px;
+
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.friends-primary-button {
+    background: linear-gradient(110deg,#5865D9,#354E9B);
+    border: 1px solid rgba(105,217,245,0.4);
+    color: white;
+
+    box-shadow: 0 8px 25px rgba(88,101,217,0.2);
+}
+
+.friends-primary-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(105,217,245,0.18);
+}
+
+.friends-outline-button {
+    border: 1px solid var(--fr-border);
+    background: rgba(255,255,255,0.035);
+    color: var(--fr-cyan);
+}
+
+.friends-outline-button:hover {
+    border-color: var(--fr-cyan);
+    transform: translateY(-4px);
+}
+
+.friends-hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 28px;
+}
+
+.friends-hero-tags span {
+    padding: 9px 11px;
+
+    border: 1px solid var(--fr-border);
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.035);
+
+    color: var(--fr-muted);
+    font-size: 8px;
+}
+
+/* ==================================================
+   04. IMAGE SYSTEM
+================================================== */
+
+.friends-photo-box {
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #354E9B,
+        #5865D9,
+        #A99BFF
+    );
+}
+
+.friends-image {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    opacity: 0;
+
+    cursor: zoom-in;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.7s ease;
+}
+
+.friends-image.loaded {
+    opacity: 1;
+}
+
+.friends-image.broken {
+    display: none;
+}
+
+.friends-photo-box.has-image .friends-placeholder {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.friends-placeholder {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #354E9B,
+        #5865D9,
+        #A99BFF
+    );
+
+    color: white;
+    text-align: center;
+
+    transition: 0.4s;
+}
+
+.friends-placeholder span {
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.friends-placeholder p {
+    max-width: 90%;
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* HERO COLLAGE */
+
+.friends-hero-visual {
+    position: relative;
+
+    width: 100%;
+    max-width: 620px;
+    height: 570px;
+
+    margin: auto;
+}
+
+.friends-hero-glow {
+    position: absolute;
+    inset: 12%;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(88,101,217,0.4),
+        transparent 70%
+    );
+
+    filter: blur(45px);
+}
+
+.friends-hero-main {
+    position: absolute;
+    top: 60px;
+    left: 17%;
+    z-index: 2;
+
+    width: 62%;
+    height: 415px;
+
+    border: 7px solid rgba(169,155,255,0.5);
+    border-radius: 155px 155px 27px 27px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.3),
+        0 0 35px rgba(105,217,245,0.13);
+
+    transform: rotate(-2deg);
+    transition: 0.5s;
+}
+
+.friends-hero-main:hover {
+    transform: rotate(0) translateY(-8px);
+}
+
+.friends-hero-caption {
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 45px 12px 18px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(8,15,36,0.92)
+    );
+
+    text-align: center;
+}
+
+.friends-hero-caption > span {
+    display: block;
+    color: var(--fr-cyan);
+    font-size: 7px;
+    letter-spacing: 1.5px;
+}
+
+.friends-hero-caption strong {
+    display: block;
+    color: white;
+    font-size: 11px;
+    margin: 9px 0;
+}
+
+.friends-hero-caption p {
+    color: var(--fr-muted);
+    font-size: 8px;
+    line-height: 1.6;
+}
+
+.friends-float-photo {
+    position: absolute;
+    z-index: 4;
+
+    width: 140px;
+    height: 150px;
+
+    border: 5px solid #CBD6FF;
+    border-radius: 17px;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.28);
+    transition: 0.4s;
+}
+
+.friends-float-photo:hover {
+    z-index: 8;
+    transform: translateY(-9px) rotate(0) scale(1.06);
+}
+
+.friends-float-one {
+    top: 10px;
+    right: 1%;
+    transform: rotate(8deg);
+}
+
+.friends-float-two {
+    bottom: 20px;
+    left: 0;
+    transform: rotate(-7deg);
+}
+
+.friends-floating-note {
+    position: absolute;
+    z-index: 6;
+    top: 190px;
+    right: -2%;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 15px;
+
+    background: rgba(22,36,77,0.94);
+    border: 1px solid rgba(105,217,245,0.3);
+    border-radius: 12px;
+
+    animation: friendsFloat 4s ease-in-out infinite;
+}
+
+.friends-floating-note > span {
+    color: var(--fr-cyan);
+    font-size: 23px;
+}
+
+.friends-floating-note strong {
+    display: block;
+    color: white;
+    font-size: 9px;
+}
+
+.friends-floating-note small {
+    display: block;
+    color: var(--fr-muted);
+    font-size: 8px;
+    margin-top: 4px;
+}
+
+@keyframes friendsFloat {
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+.friends-clock-widget {
+    position: absolute;
+    top: 335px;
+    right: -5%;
+    z-index: 7;
+
+    min-width: 160px;
+    padding: 15px;
+
+    border: 1px solid rgba(105,217,245,0.35);
+    border-radius: 15px;
+
+    background: rgba(16,26,56,0.96);
+    backdrop-filter: blur(16px);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.friends-clock-widget > span {
+    display: block;
+    color: var(--fr-cyan);
+    font-size: 7px;
+    letter-spacing: 1.5px;
+}
+
+.friends-clock-widget strong {
+    display: block;
+    margin: 9px 0;
+
+    color: white;
+    font-size: 21px;
+    font-variant-numeric: tabular-nums;
+}
+
+.friends-clock-widget p {
+    color: var(--fr-muted);
+    font-size: 8px;
+}
+
+.friends-visual-star {
+    position: absolute;
+    z-index: 6;
+
+    color: var(--fr-cyan);
+    font-size: 25px;
+
+    animation: friendsStarFloat 3s ease-in-out infinite;
+}
+
+.friends-star-one {
+    top: 25%;
+    left: 5%;
+}
+
+.friends-star-two {
+    top: 55%;
+    right: 4%;
+    animation-delay: 1s;
+}
+
+.friends-star-three {
+    bottom: 8%;
+    left: 35%;
+    animation-delay: 1.5s;
+}
+
+@keyframes friendsStarFloat {
+    50% {
+        transform: translateY(-12px) rotate(20deg);
+        opacity: 0.5;
+    }
+}
+
+.friends-scroll-indicator {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+
+    transform: translateX(-50%);
+
+    color: var(--fr-muted);
+    text-decoration: none;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.friends-scroll-indicator div {
+    color: var(--fr-cyan);
+    font-size: 21px;
+    animation: friendsScrollDown 1.5s infinite;
+}
+
+@keyframes friendsScrollDown {
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+/* ==================================================
+   05. GENERAL SECTION HEADING
+================================================== */
+
+.friends-section-heading {
+    max-width: 800px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.friends-section-heading > span {
+    display: block;
+    color: var(--fr-cyan);
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.friends-section-heading h2 {
+    color: var(--fr-white);
+    font-size: clamp(30px,4.5vw,46px);
+    line-height: 1.3;
+    margin: 0 0 17px;
+}
+
+.friends-section-heading h2 span {
+    background: linear-gradient(
+        100deg,
+        var(--fr-cyan),
+        var(--fr-purple)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.friends-section-heading p {
+    max-width: 650px;
+    margin: auto;
+
+    color: var(--fr-muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* ==================================================
+   06. DASHBOARD
+================================================== */
+
+.friends-dashboard-section {
+    padding: 90px 7%;
+
+    background: rgba(18,30,65,0.8);
+
+    border-top: 1px solid var(--fr-border);
+    border-bottom: 1px solid var(--fr-border);
+}
+
+.friends-overline {
+    color: var(--fr-cyan);
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.friends-dashboard-heading {
+    max-width: 1200px;
+    margin: 25px auto 38px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 25px;
+}
+
+.friends-dashboard-heading h2 {
+    color: white;
+    font-size: clamp(32px,4.5vw,48px);
+    line-height: 1.3;
+    margin: 0 0 13px;
+}
+
+.friends-dashboard-heading h2 span {
+    background: linear-gradient(
+        100deg,
+        var(--fr-cyan),
+        var(--fr-purple)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.friends-dashboard-heading p {
+    color: var(--fr-muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.friends-profile-badge {
+    min-width: 220px;
+    padding: 18px;
+
+    background: rgba(105,217,245,0.055);
+    border: 1px solid rgba(105,217,245,0.22);
+    border-radius: 15px;
+}
+
+.friends-profile-badge span {
+    display: block;
+    color: var(--fr-cyan);
+    font-size: 8px;
+    letter-spacing: 1.5px;
+}
+
+.friends-profile-badge strong {
+    display: block;
+    color: white;
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.friends-profile-badge small {
+    color: var(--fr-muted);
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.friends-stat-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 15px;
+}
+
+.friends-stat-card {
+    padding: 23px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(32,47,88,0.96),
+        rgba(20,32,66,0.98)
+    );
+
+    border: 1px solid var(--fr-border);
+    border-radius: 18px;
+
+    transition: 0.35s;
+}
+
+.friends-stat-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(105,217,245,0.5);
+    box-shadow: 0 17px 35px rgba(0,0,0,0.2);
+}
+
+.friends-stat-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 14px;
+    background: rgba(88,101,217,0.2);
+
+    color: var(--fr-purple);
+    font-size: 23px;
+}
+
+.friends-stat-card > span {
+    color: var(--fr-cyan);
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.friends-stat-card h3 {
+    color: white;
+    font-size: 34px;
+    margin: 11px 0 5px;
+}
+
+.friends-stat-card > p {
+    color: white;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.friends-stat-card > small {
+    color: var(--fr-muted);
+    font-size: 9px;
+}
+
+.friends-dashboard-note {
+    max-width: 1200px;
+    margin: 25px auto 0;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--fr-muted);
+    font-size: 8px;
+    letter-spacing: 1.5px;
+}
+
+/* ==================================================
+   07. BEST FRIEND PROFILE
+================================================== */
+
+.bestfriend-section {
+    padding: 100px 7%;
+}
+
+.bestfriend-card {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 35px;
+
+    padding: 25px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(32,47,88,0.96),
+        rgba(17,29,62,0.98)
+    );
+
+    border: 1px solid rgba(169,155,255,0.3);
+    border-radius: 22px;
+
+    transition: 0.35s;
+}
+
+.bestfriend-card:hover {
+    border-color: rgba(105,217,245,0.45);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.bestfriend-photo {
+    position: relative;
+    min-height: 470px;
+
+    border: 5px solid rgba(169,155,255,0.4);
+    border-radius: 18px;
+}
+
+.bestfriend-photo .friends-image {
+    object-position: center;
+}
+
+.bestfriend-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 4;
+
+    padding: 10px 13px;
+
+    border: 1px solid rgba(105,217,245,0.4);
+    border-radius: 9px;
+
+    background: rgba(8,15,36,0.9);
+
+    color: var(--fr-cyan);
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.bestfriend-photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+
+    padding: 35px 12px 15px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(8,15,36,0.9)
+    );
+
+    color: white;
+    text-align: center;
+    font-size: 8px;
+    letter-spacing: 1.3px;
+}
+
+.bestfriend-content {
+    padding: 15px 5px;
+}
+
+.bestfriend-label {
+    color: var(--fr-cyan);
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.bestfriend-content h3 {
+    color: white;
+    font-size: 40px;
+    margin: 15px 0 8px;
+}
+
+.bestfriend-subtitle {
+    color: var(--fr-purple);
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.bestfriend-content > p {
+    color: var(--fr-muted);
+    font-size: 12px;
+    line-height: 2;
+    margin-bottom: 15px;
+}
+
+.bestfriend-mini-boxes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 9px;
+    margin-top: 25px;
+}
+
+.mini-box {
+    position: relative;
+    padding: 14px 16px 14px 47px;
+
+    border: 1px solid var(--fr-border);
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.035);
+}
+
+.mini-box > span {
+    position: absolute;
+    top: 50%;
+    left: 13px;
+
+    transform: translateY(-50%);
+
+    color: var(--fr-cyan);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.mini-box strong {
+    display: block;
+    color: white;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.mini-box p {
+    color: var(--fr-muted);
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+.letter-button {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 25px;
+    padding: 14px 16px;
+
+    border: 1px solid rgba(105,217,245,0.3);
+    border-radius: 10px;
+
+    background: rgba(88,101,217,0.16);
+
+    color: var(--fr-cyan);
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.letter-button:hover {
+    background: rgba(88,101,217,0.32);
+    border-color: var(--fr-cyan);
+    transform: translateY(-3px);
+}
+
+.letter-button span {
+    font-size: 16px;
+}
+
+/* ==================================================
+   08. FRIENDSHIP JOURNEY
+================================================== */
+
+.journey-section {
+    padding: 100px 7%;
+
+    background: rgba(18,30,65,0.8);
+
+    border-top: 1px solid var(--fr-border);
+    border-bottom: 1px solid var(--fr-border);
+}
+
+.journey-timeline {
+    position: relative;
+
+    max-width: 850px;
+    margin: auto;
+    padding: 10px 0 10px 40px;
+}
+
+.journey-timeline::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background: linear-gradient(
+        180deg,
+        var(--fr-cyan),
+        var(--fr-indigo),
+        var(--fr-purple)
+    );
+
+    opacity: 0.55;
+}
+
+.timeline-card {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-card:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -36px;
+    top: 25px;
+
+    width: 15px;
+    height: 15px;
+
+    border: 3px solid var(--fr-cyan);
+    border-radius: 50%;
+
+    background: var(--fr-deep);
+
+    box-shadow: 0 0 15px rgba(105,217,245,0.5);
+}
+
+.timeline-content {
+    padding: 25px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(32,47,88,0.96),
+        rgba(17,29,62,0.98)
+    );
+
+    border: 1px solid var(--fr-border);
+    border-radius: 17px;
+
+    transition: 0.35s;
+}
+
+.timeline-content:hover {
+    transform: translateX(5px);
+    border-color: rgba(105,217,245,0.45);
+}
+
+.timeline-content > span {
+    color: var(--fr-cyan);
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.timeline-content h3 {
+    color: white;
+    font-size: 21px;
+    margin: 13px 0 16px;
+}
+
+.timeline-content > p {
+    color: var(--fr-muted);
+    font-size: 11px;
+    line-height: 2;
+    margin-top: 16px;
+}
+
+.timeline-photo {
+    height: 250px;
+    border-radius: 12px;
+}
+
+.timeline-photo .friends-image {
+    object-fit: cover;
+}
+
+.timeline-icon {
+    width: 100%;
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid var(--fr-border);
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(88,101,217,0.25),
+        rgba(169,155,255,0.13)
+    );
+
+    font-size: 55px;
+}
+
+.timeline-memory {
+    margin-top: 20px;
+    padding: 12px 14px;
+
+    border-left: 2px solid var(--fr-cyan);
+    background: rgba(105,217,245,0.05);
+
+    color: var(--fr-purple);
+    font-family: Georgia,serif;
+    font-size: 11px;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.journey-ending-note {
+    max-width: 650px;
+    margin: 35px auto 0;
+    padding: 18px;
+
+    border: 1px solid var(--fr-border);
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.025);
+
+    color: var(--fr-muted);
+    text-align: center;
+
+    font-family: Georgia,serif;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.9;
+}
+
+.journey-ending-note span {
+    color: var(--fr-cyan);
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+/* ==================================================
+   09. SUPPORT SECTION
+================================================== */
+
+.support-section {
+    padding: 100px 7%;
+}
+
+.support-card {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 40px;
+
+    padding: 30px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(32,47,88,0.95),
+        rgba(17,29,62,0.98)
+    );
+
+    border: 1px solid var(--fr-border);
+    border-radius: 22px;
+}
+
+.support-label {
+    color: var(--fr-cyan);
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.support-text h3 {
+    color: white;
+    font-size: clamp(25px,3vw,34px);
+    line-height: 1.4;
+    margin: 17px 0 22px;
+}
+
+.support-text > p {
+    color: var(--fr-muted);
+    font-size: 12px;
+    line-height: 2.05;
+    margin-bottom: 16px;
+}
+
+.support-quote {
+    margin-top: 25px;
+    padding: 17px;
+
+    border-left: 2px solid var(--fr-purple);
+    background: rgba(169,155,255,0.07);
+
+    color: var(--fr-purple);
+    font-family: Georgia,serif;
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.support-photo-group {
+    position: relative;
+    min-height: 430px;
+}
+
+.support-photo {
+    position: absolute;
+    overflow: hidden;
+
+    border: 5px solid #CBD6FF;
+    border-radius: 16px;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.support-photo-one {
+    top: 10px;
+    left: 5%;
+    width: 73%;
+    height: 255px;
+    transform: rotate(-4deg);
+}
+
+.support-photo-two {
+    right: 0;
+    bottom: 40px;
+    width: 73%;
+    height: 245px;
+    transform: rotate(5deg);
+}
+
+.support-photo:hover {
+    z-index: 5;
+}
+
+.support-photo-caption {
+    position: absolute;
+    z-index: 6;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    color: var(--fr-cyan);
+    text-align: center;
+
+    font-family: Georgia,serif;
+    font-size: 11px;
+    font-style: italic;
+}
+
+/* ==================================================
+   10. FAMILY CONNECTION
+================================================== */
+
+.family-bond-section {
+    padding: 100px 7%;
+
+    background: rgba(18,30,65,0.8);
+
+    border-top: 1px solid var(--fr-border);
+    border-bottom: 1px solid var(--fr-border);
+}
+
+.family-bond-card {
+    position: relative;
+    overflow: hidden;
+
+    max-width: 850px;
+    margin: auto;
+    padding: 45px 35px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(88,101,217,0.2),
+            transparent 75%
+        ),
+        rgba(23,36,72,0.9);
+
+    border: 1px solid rgba(169,155,255,0.3);
+    border-radius: 23px;
+
+    text-align: center;
+}
+
+.bond-icon {
+    color: var(--fr-purple);
+    font-size: 43px;
+    animation: friendsHeartPulse 2s infinite;
+}
+
+@keyframes friendsHeartPulse {
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.family-bond-card > span {
+    display: block;
+    color: var(--fr-cyan);
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 18px;
+}
+
+.family-bond-card h3 {
+    color: white;
+    font-size: clamp(22px,3vw,29px);
+    line-height: 1.4;
+    margin: 17px 0 23px;
+}
+
+.family-bond-card > p {
+    max-width: 660px;
+    margin: 0 auto 17px;
+
+    color: var(--fr-muted);
+    font-size: 12px;
+    line-height: 2.1;
+}
+
+.family-bond-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+
+    margin: 35px 0;
+}
+
+.bond-circle {
+    width: 115px;
+    height: 115px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+
+    border: 1px solid rgba(105,217,245,0.35);
+    border-radius: 50%;
+
+    background: rgba(88,101,217,0.16);
+
+    box-shadow: 0 0 30px rgba(88,101,217,0.13);
+}
+
+.bond-circle > span {
+    color: var(--fr-cyan);
+    font-size: 23px;
+}
+
+.bond-circle strong {
+    color: white;
+    font-size: 12px;
+}
+
+.bond-circle small {
+    color: var(--fr-muted);
+    font-size: 7px;
+    letter-spacing: 1px;
+}
+
+.bond-connection {
+    color: var(--fr-purple);
+    font-size: 35px;
+}
+
+.bond-closing {
+    padding-top: 20px;
+    border-top: 1px solid var(--fr-border);
+
+    color: var(--fr-purple);
+    font-family: Georgia,serif;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* ==================================================
+   11. MEMORY GALLERY
+================================================== */
+
+.memory-section {
+    padding: 100px 7%;
+}
+
+.memory-filter-area {
+    max-width: 1000px;
+    margin: auto auto 35px;
+    padding: 19px;
+
+    background: rgba(23,36,72,0.75);
+    border: 1px solid var(--fr-border);
+    border-radius: 15px;
+}
+
+.memory-filter-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.memory-filter-heading > span {
+    color: var(--fr-cyan);
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.memory-filter-heading small {
+    color: var(--fr-muted);
+    font-size: 8px;
+}
+
+.memory-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.memory-filter {
+    padding: 11px 15px;
+
+    border: 1px solid var(--fr-border);
+    border-radius: 9px;
+
+    background: rgba(255,255,255,0.035);
+
+    color: var(--fr-muted);
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.memory-filter:hover {
+    border-color: var(--fr-cyan);
+    color: var(--fr-cyan);
+}
+
+.memory-filter.active {
+    border-color: rgba(105,217,245,0.55);
+
+    background: linear-gradient(
+        110deg,
+        rgba(88,101,217,0.45),
+        rgba(53,78,155,0.35)
+    );
+
+    color: white;
+}
+
+.memory-grid {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 20px;
+}
+
+.memory-card {
+    min-width: 0;
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        rgba(32,47,88,0.96),
+        rgba(17,29,62,0.98)
+    );
+
+    border: 1px solid var(--fr-border);
+    border-radius: 18px;
+
+    transition: 0.35s;
+}
+
+.memory-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(105,217,245,0.5);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.23);
+}
+
+.memory-card.is-hidden {
+    display: none;
+}
+
+.memory-photo {
+    position: relative;
+    height: 300px;
+}
+
+.memory-photo .friends-image {
+    object-fit: cover;
+}
+
+.memory-card:hover .friends-image {
+    transform: scale(1.05);
+}
+
+.memory-number {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    z-index: 4;
+
+    width: 33px;
+    height: 33px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 9px;
+
+    background: rgba(8,15,36,0.85);
+
+    color: var(--fr-cyan);
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.memory-caption {
+    padding: 20px;
+}
+
+.memory-caption > span {
+    color: var(--fr-cyan);
+    font-size: 7px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.memory-caption h3 {
+    color: white;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.memory-caption p {
+    color: var(--fr-muted);
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+.gallery-note {
+    margin-top: 35px;
+
+    color: var(--fr-muted);
+    text-align: center;
+
+    font-family: Georgia,serif;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* ==================================================
+   12. LETTER SECTION
+================================================== */
+
+.letter-section {
+    position: relative;
+    overflow: hidden;
+
+    padding: 90px 7%;
+
+    background: rgba(18,30,65,0.8);
+
+    border-top: 1px solid var(--fr-border);
+    border-bottom: 1px solid var(--fr-border);
+}
+
+.letter-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 450px;
+    height: 450px;
+
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(88,101,217,0.23),
+        transparent 70%
+    );
+
+    filter: blur(25px);
+}
+
+.letter-box {
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+    margin: auto;
+    padding: 60px 35px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(32,47,88,0.9),
+        rgba(17,29,62,0.98)
+    );
+
+    border: 1px solid rgba(169,155,255,0.32);
+    border-radius: 25px;
+
+    text-align: center;
+}
+
+.letter-deco {
+    color: var(--fr-purple);
+    font-size: 27px;
+    letter-spacing: 10px;
+    margin-bottom: 22px;
+}
+
+.letter-box > span {
+    color: var(--fr-cyan);
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+}
+
+.letter-box h2 {
+    color: white;
+    font-size: clamp(29px,4vw,42px);
+    line-height: 1.4;
+    margin: 20px 0;
+}
+
+.letter-box h2 span {
+    background: linear-gradient(
+        100deg,
+        var(--fr-cyan),
+        var(--fr-purple)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.letter-box > p {
+    max-width: 550px;
+    margin: auto;
+
+    color: var(--fr-muted);
+    font-family: Georgia,serif;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.open-main-letter {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 30px;
+    padding: 15px 23px;
+
+    border: 1px solid rgba(105,217,245,0.4);
+    border-radius: 10px;
+
+    background: linear-gradient(
+        110deg,
+        #5865D9,
+        #354E9B
+    );
+
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.open-main-letter:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(105,217,245,0.15);
+}
+
+.open-main-letter span {
+    font-size: 15px;
+}
+
+.letter-bottom-decoration {
+    margin-top: 30px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--fr-border);
+
+    color: var(--fr-purple);
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+/* ==================================================
+   13. FRIENDSHIP ENDING
+================================================== */
+
+.friends-ending {
+    max-width: 1050px;
+
+    margin: 35px auto 85px;
+    padding: 75px 35px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(88,101,217,0.26),
+            transparent 75%
+        ),
+        #142247;
+
+    border: 1px solid rgba(169,155,255,0.3);
+    border-radius: 30px;
+}
+
+.ending-stars {
+    color: var(--fr-cyan);
+    font-size: 23px;
+    letter-spacing: 10px;
+}
+
+.friends-ending > span {
+    display: block;
+    color: var(--fr-cyan);
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+    margin-top: 22px;
+}
+
+.friends-ending h2 {
+    color: white;
+    font-size: clamp(34px,5vw,49px);
+    line-height: 1.4;
+    margin: 20px 0;
+}
+
+.friends-ending h2 span {
+    background: linear-gradient(
+        100deg,
+        var(--fr-cyan),
+        var(--fr-purple)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.friends-ending > p {
+    max-width: 630px;
+    margin: auto;
+
+    color: var(--fr-muted);
+    font-size: 12px;
+    line-height: 2.1;
+}
+
+.ending-quote {
+    max-width: 600px;
+    margin: 28px auto;
+
+    color: var(--fr-purple);
+    font-family: Georgia,serif;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.9;
+}
+
+.friends-ending h3 {
+    margin: 32px 0;
+
+    color: var(--fr-cyan);
+    font-family: Georgia,serif;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* ==================================================
+   14. LETTER MODAL
+================================================== */
+
+.letter-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(3,8,24,0.9);
+    backdrop-filter: blur(15px);
+}
+
+.letter-modal.open {
+    display: flex;
+}
+
+.letter-modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 680px;
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 48px 38px;
+
+    background: linear-gradient(
+        145deg,
+        #1B2B58,
+        #111B3A
+    );
+
+    border: 1px solid rgba(169,155,255,0.35);
+    border-radius: 23px;
+
+    box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+
+    animation: friendsModalIn 0.35s ease;
+}
+
+@keyframes friendsModalIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 19px;
+
+    border: none;
+    background: transparent;
+
+    color: var(--fr-muted);
+    font-size: 34px;
+    cursor: pointer;
+}
+
+.letter-top {
+    color: var(--fr-purple);
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 9px;
+    margin-bottom: 23px;
+}
+
+.letter-modal-content > span {
+    display: block;
+
+    color: var(--fr-cyan);
+    text-align: center;
+
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.letter-modal-content h2 {
+    color: white;
+    font-family: Georgia,serif;
+    font-size: clamp(23px,4vw,31px);
+    line-height: 1.5;
+
+    text-align: center;
+
+    margin: 17px 0;
+}
+
+.letter-divider {
+    width: 60px;
+    height: 2px;
+    margin: 25px auto;
+
+    background: linear-gradient(
+        90deg,
+        var(--fr-cyan),
+        var(--fr-purple)
+    );
+}
+
+.letter-modal-content > p {
+    color: #D1D9ED;
+    font-family: Georgia,serif;
+    font-size: 13px;
+    line-height: 2.15;
+
+    white-space: pre-line;
+}
+
+.letter-bottom {
+    margin-top: 30px;
+    padding-top: 22px;
+
+    border-top: 1px solid var(--fr-border);
+
+    color: var(--fr-purple);
+    text-align: right;
+
+    font-family: Georgia,serif;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* ==================================================
+   15. IMAGE LIGHTBOX
+================================================== */
+
+.friends-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 6000;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    padding: 25px;
+
+    background: rgba(3,8,24,0.95);
+    backdrop-filter: blur(14px);
+}
+
+.friends-lightbox.open {
+    display: flex;
+}
+
+.friends-lightbox img {
+    max-width: 92%;
+    max-height: 78vh;
+
+    object-fit: contain;
+
+    border: 4px solid rgba(169,155,255,0.5);
+    border-radius: 14px;
+
+    box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+}
+
+.friends-lightbox p {
+    color: white;
+    text-align: center;
+    font-size: 11px;
+}
+
+.friends-lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 23px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* ==================================================
+   16. FOOTER
+================================================== */
+
+.friends-footer {
+    position: relative;
+    z-index: 2;
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    background: #080F24;
+    border-top: 1px solid var(--fr-border);
+}
+
+.friends-footer-brand {
+    color: white;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.friends-footer-brand span {
+    color: var(--fr-cyan);
+}
+
+.friends-footer > p {
+    color: var(--fr-muted);
+    font-size: 10px;
+    line-height: 1.9;
+    margin-top: 13px;
+}
+
+.friends-footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.friends-footer-links a {
+    color: var(--fr-muted);
+    text-decoration: none;
+    font-size: 9px;
+    transition: 0.3s;
+}
+
+.friends-footer-links a:hover {
+    color: var(--fr-cyan);
+}
+
+.friends-footer-divider {
+    max-width: 500px;
+    height: 1px;
+    margin: 25px auto;
+    background: var(--fr-border);
+}
+
+.friends-footer > p:last-child {
+    color: #7888B1;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+/* ==================================================
+   17. BACK TO TOP
+================================================== */
+
+.friends-back-top {
+    position: fixed;
+    right: 24px;
+    bottom: 25px;
+    z-index: 1800;
+
+    width: 46px;
+    height: 46px;
+
+    border: 1px solid rgba(105,217,245,0.4);
+    border-radius: 13px;
+
+    background: rgba(22,36,77,0.95);
+    color: var(--fr-cyan);
+
+    font-size: 21px;
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+
+    transition: 0.3s;
+}
+
+.friends-back-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* ==================================================
+   18. SCROLL REVEAL
+================================================== */
+
+.friends-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.js-enabled .friends-reveal {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.js-enabled .friends-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==================================================
+   19. TABLET
+================================================== */
+
+@media screen and (max-width: 1150px) {
+
+    .friends-body .farah-nav-links {
+        gap: 0;
+    }
+
+    .friends-body .farah-nav-links a {
+        padding: 9px 7px;
+        font-size: 9px;
+    }
+
+    .friends-hero-layout {
+        gap: 25px;
+    }
+
+    .friends-hero-visual {
+        transform: scale(0.9);
+    }
+
+    .bestfriend-card {
+        gap: 25px;
+    }
+
+}
+
+/* ==================================================
+   20. MOBILE NAVIGATION
+================================================== */
+
+@media screen and (max-width: 950px) {
+
+    .friends-body .farah-menu-toggle {
+        display: block;
+    }
+
+    .friends-body .farah-nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+
+        padding: 15px 20px 22px;
+
+        background: rgba(8,15,36,0.98);
+        border-bottom: 1px solid var(--fr-border);
+
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        backdrop-filter: blur(20px);
+    }
+
+    .friends-body .farah-nav-links.open {
+        display: flex;
+    }
+
+    .friends-body .farah-nav-links a {
+        padding: 13px 15px;
+        font-size: 11px;
+    }
+
+}
+
+/* ==================================================
+   21. MOBILE LAYOUT
+================================================== */
+
+@media screen and (max-width: 750px) {
+
+    .friends-hero {
+        min-height: auto;
+        padding: 25px 6% 85px;
+    }
+
+    .friends-system-status {
+        flex-wrap: wrap;
+    }
+
+    .friends-system-status > span:last-child {
+        font-size: 8px;
+    }
+
+    .friends-hero-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-top: 45px;
+    }
+
+    .friends-hero-content h1 {
+        font-size: clamp(42px,10vw,64px);
+    }
+
+    .friends-introduction {
+        font-size: 12px;
+    }
+
+    .friends-hero-visual {
+        width: 100%;
+        max-width: 480px;
+        height: 455px;
+        transform: none;
+        margin: 15px auto 0;
+    }
+
+    .friends-hero-main {
+        top: 45px;
+        left: 18%;
+        width: 60%;
+        height: 330px;
+    }
+
+    .friends-float-photo {
+        width: 110px;
+        height: 120px;
+    }
+
+    .friends-floating-note {
+        top: 165px;
+        right: -2%;
+        padding: 9px 11px;
+    }
+
+    .friends-clock-widget {
+        top: 290px;
+        right: -2%;
+        min-width: 140px;
+        padding: 12px;
+    }
+
+    .friends-clock-widget strong {
+        font-size: 18px;
+    }
+
+    .friends-dashboard-section,
+    .bestfriend-section,
+    .journey-section,
+    .support-section,
+    .family-bond-section,
+    .memory-section {
+        padding: 75px 5%;
+    }
+
+    .friends-dashboard-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .friends-profile-badge {
+        width: 100%;
+    }
+
+    .friends-stat-grid {
+        gap: 12px;
+    }
+
+    .friends-stat-card {
+        padding: 17px;
+    }
+
+    .friends-stat-card h3 {
+        font-size: 29px;
+    }
+
+    .bestfriend-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 19px;
+    }
+
+    .bestfriend-photo {
+        min-height: 340px;
+    }
+
+    .bestfriend-content {
+        padding: 12px 3px;
+    }
+
+    .bestfriend-content h3 {
+        font-size: 33px;
+    }
+
+    .timeline-content {
+        padding: 19px;
+    }
+
+    .timeline-photo {
+        height: 220px;
+    }
+
+    .support-card {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 22px;
+    }
+
+    .support-photo-group {
+        min-height: 380px;
+    }
+
+    .support-photo-one {
+        height: 220px;
+    }
+
+    .support-photo-two {
+        height: 210px;
+        bottom: 35px;
+    }
+
+    .family-bond-card {
+        padding: 35px 20px;
+    }
+
+    .memory-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 12px;
+    }
+
+    .memory-photo {
+        height: 190px;
+    }
+
+    .memory-caption {
+        padding: 15px;
+    }
+
+    .memory-caption h3 {
+        font-size: 15px;
+    }
+
+    .letter-section {
+        padding: 75px 5%;
+    }
+
+    .letter-box {
+        padding: 48px 23px;
+    }
+
+    .friends-ending {
+        margin: 20px 15px 60px;
+        padding: 55px 20px;
+    }
+
+}
+
+/* ==================================================
+   22. SMALL PHONES
+================================================== */
+
+@media screen and (max-width: 430px) {
+
+    .friends-overline {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .friends-hero-buttons {
+        flex-direction: column;
+    }
+
+    .friends-primary-button,
+    .friends-outline-button {
+        width: 100%;
+    }
+
+    .friends-hero-visual {
+        height: 380px;
+    }
+
+    .friends-hero-main {
+        height: 280px;
+    }
+
+    .friends-float-photo {
+        width: 90px;
+        height: 100px;
+    }
+
+    .friends-floating-note {
+        top: 145px;
+        font-size: 8px;
+    }
+
+    .friends-clock-widget {
+        top: 225px;
+        min-width: 125px;
+    }
+
+    .friends-clock-widget strong {
+        font-size: 16px;
+    }
+
+    .friends-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .friends-stat-card {
+        display: grid;
+        grid-template-columns: 45px 1fr;
+        column-gap: 13px;
+        align-items: center;
+    }
+
+    .friends-stat-icon {
+        grid-row: span 3;
+        margin: 0;
+    }
+
+    .friends-stat-card > span,
+    .friends-stat-card h3,
+    .friends-stat-card > p,
+    .friends-stat-card > small {
+        grid-column: 2;
+    }
+
+    .friends-stat-card h3 {
+        margin: 6px 0;
+    }
+
+    .bestfriend-photo {
+        min-height: 260px;
+    }
+
+    .bestfriend-content h3 {
+        font-size: 29px;
+    }
+
+    .journey-timeline {
+        padding-left: 29px;
+    }
+
+    .timeline-dot {
+        left: -25px;
+        width: 12px;
+        height: 12px;
+    }
+
+    .timeline-content h3 {
+        font-size: 18px;
+    }
+
+    .timeline-photo {
+        height: 190px;
+    }
+
+    .support-photo-group {
+        min-height: 330px;
+    }
+
+    .support-photo-one {
+        height: 190px;
+    }
+
+    .support-photo-two {
+        height: 180px;
+    }
+
+    .family-bond-visual {
+        gap: 9px;
+    }
+
+    .bond-circle {
+        width: 92px;
+        height: 92px;
+    }
+
+    .bond-circle > span {
+        font-size: 19px;
+    }
+
+    .bond-circle strong {
+        font-size: 10px;
+    }
+
+    .bond-connection {
+        font-size: 27px;
+    }
+
+    .memory-filter-area {
+        padding: 14px;
+    }
+
+    .memory-filter-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .memory-filter {
+        flex: 1 1 auto;
+        padding: 10px 8px;
+        font-size: 7px;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: auto;
+    }
+
+    .memory-photo {
+        height: 240px;
+    }
+
+    .memory-caption h3 {
+        font-size: 17px;
+    }
+
+    .letter-box h2 {
+        font-size: 27px;
+    }
+
+    .letter-modal-content {
+        padding: 40px 22px;
+    }
+
+    .letter-modal-content > p {
+        font-size: 12px;
+    }
+
+    .friends-footer-links {
+        gap: 13px;
+    }
+
+}
+
+/* ==================================================
+   23. ACCESSIBILITY
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .friends-page *,
+    .friends-page *::before,
+    .friends-page *::after,
+    .friends-universe-bg * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+}
+.ownership-statement {
+    padding: 12px 15px;
+    text-align: center;
+    border-top: 1px solid rgba(170,190,255,0.17);
+}
+
+.ownership-statement p {
+    color: #AAB6D5;
+    font-size: 9px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   CHAPTER 02 - TIMELINE IMAGE FIX
+========================================= */
+
+.timeline-photo {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 22px 0;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #172448;
+}
+
+.timeline-photo .friends-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px;
+}
+
+.timeline-photo .friends-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #172448, #354E9B);
+    color: #69D9F5;
+}
+
+.timeline-photo .friends-placeholder[hidden] {
+    display: none !important;
+}
+
+.timeline-photo .friends-placeholder span {
+    font-size: 35px;
+}
+
+.timeline-photo .friends-placeholder p {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+@media(max-width:600px) {
+
+    .timeline-photo {
+        aspect-ratio: 4 / 3;
+    }
+
+}

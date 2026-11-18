@@ -1,0 +1,201 @@
+
+/* =========================================
+   FARAH'S LITTLE UNIVERSE
+   BIODATA EXTRA DESIGN
+========================================= */
+
+/* INTRODUCTION BUTTONS */
+
+.bio-action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.bio-action-buttons .discover-button {
+    margin-top: 0;
+}
+
+.bio-action-buttons .achievement-button {
+    background: linear-gradient(
+        135deg,
+        #A99AE8,
+        #657FC5
+    );
+}
+
+/* ACHIEVEMENT PROMOTION */
+
+.achievement-promo {
+    position: relative;
+    z-index: 2;
+
+    max-width: 950px;
+    margin: 70px auto;
+    padding: 60px 35px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #EAF5FF,
+        #DCD8FF,
+        #CDE7FF
+    );
+
+    border: 1px solid rgba(255,255,255,0.95);
+    border-radius: 35px;
+
+    box-shadow: 0 18px 45px rgba(101,127,197,0.15);
+
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+.achievement-promo::before {
+    content: "";
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -80px;
+    right: -50px;
+
+    background: rgba(255,255,255,0.35);
+    border-radius: 50%;
+}
+
+.achievement-promo::after {
+    content: "";
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    bottom: -70px;
+    left: -30px;
+
+    background: rgba(255,255,255,0.35);
+    border-radius: 50%;
+}
+
+.achievement-promo:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 25px 55px rgba(101,127,197,0.2);
+}
+
+.promo-icon {
+    position: relative;
+    z-index: 1;
+
+    font-size: 52px;
+    margin-bottom: 18px;
+
+    animation: promoFloat 3s ease-in-out infinite;
+}
+
+@keyframes promoFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.achievement-promo > span {
+    position: relative;
+    z-index: 1;
+
+    color: #657FC5;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.achievement-promo h2 {
+    position: relative;
+    z-index: 1;
+
+    color: #303D68;
+    font-size: clamp(25px,4vw,36px);
+    line-height: 1.35;
+
+    margin: 17px 0;
+}
+
+.achievement-promo p {
+    position: relative;
+    z-index: 1;
+
+    max-width: 600px;
+    margin: auto;
+
+    color: #536587;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.promo-button {
+    position: relative;
+    z-index: 1;
+
+    display: inline-block;
+    margin-top: 28px;
+    padding: 15px 27px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    background: linear-gradient(
+        135deg,
+        #83B9E8,
+        #657FC5
+    );
+
+    border-radius: 30px;
+
+    box-shadow: 0 8px 22px rgba(101,127,197,0.25);
+
+    transition: 0.35s;
+}
+
+.promo-button:hover {
+    color: white;
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 13px 28px rgba(101,127,197,0.35);
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 600px) {
+
+    .bio-action-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .achievement-promo {
+        margin: 40px 15px;
+        padding: 45px 22px;
+    }
+
+    .achievement-promo h2 {
+        font-size: 25px;
+    }
+
+    .achievement-promo p {
+        font-size: 13px;
+    }
+
+}

@@ -1,0 +1,1712 @@
+
+/* =========================================
+   FARAHVERSE - IMD318 GUIDELINE UPGRADE
+========================================= */
+
+:root {
+    --guide-navy: #080F24;
+    --guide-panel: #172448;
+    --guide-indigo: #5865D9;
+    --guide-cyan: #69D9F5;
+    --guide-lavender: #A99BFF;
+    --guide-white: #F3F5FF;
+    --guide-muted: #AAB6D5;
+    --guide-border: rgba(170,190,255,.18);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* SKIP LINK */
+
+.guideline-skip-link {
+    position: fixed;
+    top: -100px;
+    left: 15px;
+    z-index: 9999;
+    padding: 13px 18px;
+    background: var(--guide-cyan);
+    color: var(--guide-navy);
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.guideline-skip-link:focus {
+    top: 15px;
+}
+
+/* ACCESSIBILITY TOOLBAR */
+
+.guideline-accessibility {
+    position: fixed;
+    top: 110px;
+    right: 18px;
+    z-index: 2500;
+}
+
+.guideline-access-toggle {
+    padding: 12px 15px;
+    background: var(--guide-panel);
+    border: 1px solid var(--guide-cyan);
+    border-radius: 12px;
+    color: var(--guide-cyan);
+    cursor: pointer;
+    font-size: 11px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.3);
+}
+
+.guideline-access-options {
+    width: 210px;
+    margin-top: 8px;
+    padding: 15px;
+    background: #111D3A;
+    border: 1px solid var(--guide-border);
+    border-radius: 13px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.4);
+}
+
+.guideline-access-options > p {
+    color: white;
+    font-size: 11px;
+    margin-bottom: 12px;
+}
+
+.guideline-access-row {
+    display: flex;
+    gap: 7px;
+    margin-bottom: 10px;
+}
+
+.guideline-access-row button,
+.guideline-access-wide {
+    padding: 10px;
+    background: rgba(105,217,245,.08);
+    border: 1px solid var(--guide-border);
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+}
+
+.guideline-access-row button {
+    flex: 1;
+}
+
+.guideline-access-wide {
+    display: block;
+    width: 100%;
+    margin-top: 7px;
+    text-align: left;
+    font-size: 10px;
+}
+
+.guideline-access-options button:hover,
+.guideline-access-options button[aria-pressed="true"] {
+    border-color: var(--guide-cyan);
+    color: var(--guide-cyan);
+}
+
+/* ACCESSIBILITY MODES */
+
+body.guideline-high-contrast {
+    filter: contrast(1.25);
+}
+
+body.guideline-reduced-motion *,
+body.guideline-reduced-motion *::before,
+body.guideline-reduced-motion *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+}
+
+body.guideline-text-only .home-photo img,
+body.guideline-text-only .hero-visual img,
+body.guideline-text-only .memory-feature img {
+    visibility: hidden;
+}
+
+body.guideline-font-adjusted .farah-main p,
+body.guideline-font-adjusted .farah-main li,
+body.guideline-font-adjusted .farah-main a,
+body.guideline-font-adjusted .farah-main td,
+body.guideline-font-adjusted .farah-main th {
+    font-size: calc(1em * var(--guide-font-scale, 1));
+    line-height: 1.8;
+}
+
+/* GENERAL SECTIONS */
+
+.guideline-tools-section,
+.guideline-learning-section,
+.guideline-map-section,
+.guideline-external-section,
+.guideline-video-section {
+    position: relative;
+    z-index: 2;
+    padding: 85px 7%;
+}
+
+.guideline-tools-grid,
+.guideline-learning-grid {
+    max-width: 1200px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.guideline-search-card,
+.guideline-sitemap-card,
+.guideline-learning-card,
+.guideline-list-card {
+    padding: 28px;
+    background: linear-gradient(145deg,#202F58,#111D3A);
+    border: 1px solid var(--guide-border);
+    border-radius: 18px;
+}
+
+.guideline-mini-label {
+    color: var(--guide-cyan);
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.guideline-search-card h2,
+.guideline-sitemap-card h2,
+.guideline-learning-card h2 {
+    color: white;
+    font-size: 23px;
+    margin: 15px 0;
+}
+
+.guideline-search-card > p,
+.guideline-sitemap-card > p,
+.guideline-learning-card > p {
+    color: var(--guide-muted);
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+/* GLOBAL SEARCH */
+
+.guideline-search-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.guideline-search-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px;
+    background: #080F24;
+    border: 1px solid var(--guide-border);
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+
+.guideline-search-form input:focus {
+    border-color: var(--guide-cyan);
+}
+
+.guideline-search-form button {
+    padding: 12px 15px;
+    background: var(--guide-indigo);
+    border: 1px solid var(--guide-cyan);
+    border-radius: 8px;
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.guideline-search-results {
+    margin-top: 15px;
+}
+
+.guideline-search-results p {
+    color: var(--guide-muted);
+    font-size: 10px;
+}
+
+.guideline-search-result {
+    display: block;
+    padding: 12px;
+    margin-top: 8px;
+    background: rgba(105,217,245,.06);
+    border: 1px solid var(--guide-border);
+    border-radius: 8px;
+    color: var(--guide-cyan);
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.guideline-search-result:hover {
+    border-color: var(--guide-cyan);
+}
+
+/* SITEMAP */
+
+.guideline-sitemap-list {
+    padding-left: 20px;
+    margin-top: 17px;
+}
+
+.guideline-sitemap-list li {
+    margin-bottom: 12px;
+    color: var(--guide-cyan);
+}
+
+.guideline-sitemap-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.guideline-sitemap-list a:hover {
+    color: var(--guide-cyan);
+}
+
+.guideline-sitemap-list span {
+    display: block;
+    margin-top: 3px;
+    color: var(--guide-muted);
+    font-size: 9px;
+}
+
+/* TABLE */
+
+.guideline-table-wrap {
+    overflow-x: auto;
+    margin-top: 22px;
+}
+
+.guideline-academic-table {
+    width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+    color: var(--guide-white);
+    font-size: 10px;
+}
+
+.guideline-academic-table caption {
+    padding: 12px;
+    color: var(--guide-cyan);
+    text-align: left;
+    font-weight: bold;
+}
+
+.guideline-academic-table th,
+.guideline-academic-table td {
+    padding: 13px;
+    border: 1px solid var(--guide-border);
+    text-align: left;
+    line-height: 1.7;
+}
+
+.guideline-academic-table thead {
+    background: rgba(88,101,217,.3);
+}
+
+.guideline-academic-table tbody tr:nth-child(even) {
+    background: rgba(255,255,255,.035);
+}
+
+.guideline-academic-table tbody th {
+    color: var(--guide-cyan);
+}
+
+.guideline-table-note {
+    margin-top: 15px;
+    color: var(--guide-muted);
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+.guideline-table-note a {
+    color: var(--guide-cyan);
+}
+
+/* TEXT FORMATTING */
+
+.guideline-format-card strong {
+    color: var(--guide-cyan);
+}
+
+.guideline-format-card em {
+    color: var(--guide-lavender);
+}
+
+.guideline-format-card u {
+    text-decoration-color: var(--guide-cyan);
+    text-underline-offset: 4px;
+}
+
+.guideline-format-card abbr {
+    color: var(--guide-cyan);
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+.guideline-colour-example {
+    color: var(--guide-lavender) !important;
+    font-weight: bold;
+}
+
+.guideline-pre-block {
+    margin-top: 20px;
+    padding: 17px;
+    background: #080F24;
+    border: 1px solid var(--guide-border);
+    border-radius: 10px;
+}
+
+.guideline-pre-block > span {
+    color: var(--guide-cyan);
+    font-size: 8px;
+    letter-spacing: 1.5px;
+}
+
+.guideline-pre-block pre {
+    overflow-x: auto;
+    margin-top: 12px;
+    color: var(--guide-lavender);
+    font-size: 11px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* LISTS */
+
+.guideline-lists-grid {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.guideline-list-card h3 {
+    color: white;
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.guideline-ordered-list,
+.guideline-custom-list {
+    padding-left: 25px;
+    color: var(--guide-muted);
+    font-size: 11px;
+    line-height: 2.3;
+}
+
+.guideline-ordered-list li::marker {
+    color: var(--guide-cyan);
+    font-weight: bold;
+}
+
+.guideline-custom-list {
+    list-style-type: square;
+}
+
+.guideline-custom-list li::marker {
+    color: var(--guide-lavender);
+}
+
+/* IMAGE MAP */
+
+.guideline-map-frame {
+    max-width: 1000px;
+    margin: 30px auto 15px;
+    padding: 15px;
+    overflow: hidden;
+    background: linear-gradient(145deg,#172448,#080F24);
+    border: 1px solid var(--guide-border);
+    border-radius: 20px;
+}
+
+.guideline-map-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.guideline-map-feedback {
+    text-align: center;
+    color: var(--guide-cyan);
+    font-size: 10px;
+}
+
+.guideline-map-text-links {
+    max-width: 850px;
+    margin: 25px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.guideline-map-text-links a {
+    padding: 9px 13px;
+    border: 1px solid var(--guide-border);
+    border-radius: 8px;
+    color: var(--guide-muted);
+    text-decoration: none;
+    font-size: 9px;
+}
+
+.guideline-map-text-links a:hover {
+    color: var(--guide-cyan);
+    border-color: var(--guide-cyan);
+}
+
+/* EXTERNAL THUMBNAIL */
+
+.guideline-external-card {
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 22px;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 25px;
+    align-items: center;
+    background: linear-gradient(145deg,#202F58,#111D3A);
+    border: 1px solid var(--guide-border);
+    border-radius: 18px;
+}
+
+.guideline-thumbnail-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.guideline-thumbnail-link img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    transition: .4s;
+}
+
+.guideline-thumbnail-link:hover img {
+    transform: scale(1.06);
+}
+
+.guideline-thumbnail-link span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: rgba(8,15,36,.9);
+    color: var(--guide-cyan);
+    font-size: 8px;
+    text-align: center;
+}
+
+.guideline-external-card h2 {
+    color: white;
+    font-size: 22px;
+    margin: 13px 0;
+}
+
+.guideline-external-card p {
+    color: var(--guide-muted);
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+.guideline-text-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--guide-cyan);
+    font-size: 10px;
+}
+
+/* VIDEO */
+
+.guideline-video-frame {
+    max-width: 850px;
+    min-height: 260px;
+    margin: 30px auto 15px;
+    overflow: hidden;
+    background: #080F24;
+    border: 1px solid var(--guide-border);
+    border-radius: 18px;
+}
+
+.guideline-video-frame video {
+    display: block;
+    width: 100%;
+    max-height: 520px;
+    background: black;
+}
+
+.guideline-video-placeholder {
+    min-height: 260px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.guideline-video-placeholder > span {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 17px;
+    border: 1px solid var(--guide-cyan);
+    border-radius: 50%;
+    color: var(--guide-cyan);
+    font-size: 25px;
+}
+
+.guideline-video-placeholder strong {
+    color: white;
+    font-size: 12px;
+}
+
+.guideline-video-placeholder p,
+.guideline-video-note {
+    margin-top: 12px;
+    color: var(--guide-muted);
+    font-size: 10px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.guideline-video-placeholder code {
+    color: var(--guide-cyan);
+}
+
+/* OWNERSHIP */
+
+.ownership-statement {
+    max-width: 850px;
+    margin: 16px auto 0;
+    padding: 14px 16px;
+    text-align: center;
+    border-top: 1px solid var(--guide-border);
+}
+
+.ownership-statement p {
+    margin: 0;
+    color: var(--guide-muted);
+    font-size: 9px;
+    line-height: 1.8;
+}
+
+.ownership-statement strong {
+    color: var(--guide-cyan);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px) {
+    .guideline-tools-grid,
+    .guideline-learning-grid,
+    .guideline-lists-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guideline-external-card {
+        grid-template-columns: 1fr;
+    }
+
+    .guideline-thumbnail-link img {
+        height: 230px;
+    }
+}
+
+@media(max-width:550px) {
+    .guideline-tools-section,
+    .guideline-learning-section,
+    .guideline-map-section,
+    .guideline-external-section,
+    .guideline-video-section {
+        padding: 60px 5%;
+    }
+
+    .guideline-search-card,
+    .guideline-sitemap-card,
+    .guideline-learning-card,
+    .guideline-list-card {
+        padding: 20px;
+    }
+
+    .guideline-search-form {
+        flex-direction: column;
+    }
+
+    .guideline-search-form button {
+        min-height: 42px;
+    }
+
+    .guideline-accessibility {
+        top: auto;
+        right: 10px;
+        bottom: 85px;
+    }
+
+    .guideline-map-frame {
+        padding: 7px;
+    }
+}
+
+/* =========================================
+   FARAHVERSE ORIGINAL DIGITAL ARTWORK
+========================================= */
+
+.farah-artwork-section {
+    position: relative;
+    z-index: 2;
+    padding: 90px 7%;
+    overflow: hidden;
+}
+
+.farah-artwork {
+    position: relative;
+    max-width: 650px;
+    height: 600px;
+    margin: 40px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.artwork-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    border: 1px solid rgba(105,217,245,.25);
+    border-radius: 50%;
+
+    transform: translate(-50%,-50%);
+}
+
+.orbit-one {
+    width: 220px;
+    height: 220px;
+    border-style: dashed;
+    animation: artworkRotate 25s linear infinite;
+}
+
+.orbit-two {
+    width: 380px;
+    height: 380px;
+    border-color: rgba(169,155,255,.3);
+    animation: artworkRotate 35s linear infinite reverse;
+}
+
+.orbit-three {
+    width: 540px;
+    height: 540px;
+    border-color: rgba(105,217,245,.15);
+}
+
+@keyframes artworkRotate {
+    to {
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+.artwork-center {
+    position: relative;
+    z-index: 3;
+
+    width: 160px;
+    height: 185px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border: 1px solid rgba(105,217,245,.5);
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        #5865D9,
+        #172448 75%
+    );
+
+    box-shadow: 0 0 55px rgba(88,101,217,.4);
+}
+
+.artwork-center-inner {
+    width: 75px;
+    height: 75px;
+
+    display: grid;
+    place-items: center;
+
+    border: 3px solid white;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #69D9F5,
+        #A99BFF
+    );
+
+    color: white;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.artwork-center > span {
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.artwork-center > small {
+    color: #69D9F5;
+    font-size: 7px;
+    letter-spacing: 1.5px;
+}
+
+.artwork-planet {
+    position: absolute;
+    z-index: 5;
+
+    width: 92px;
+    height: 92px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    border: 1px solid rgba(105,217,245,.5);
+    border-radius: 22px;
+
+    background: linear-gradient(
+        145deg,
+        #354E9B,
+        #202F58
+    );
+
+    box-shadow: 0 8px 30px rgba(0,0,0,.3);
+
+    color: white;
+    text-decoration: none;
+
+    transition: .35s;
+}
+
+.artwork-planet > span {
+    font-size: 24px;
+}
+
+.artwork-planet strong {
+    color: #69D9F5;
+    font-size: 7px;
+    letter-spacing: .8px;
+}
+
+.artwork-planet:hover {
+    transform: scale(1.12);
+    border-color: #A99BFF;
+    box-shadow: 0 0 28px rgba(105,217,245,.3);
+}
+
+.planet-about {
+    top: 5%;
+    left: 42%;
+}
+
+.planet-education {
+    top: 23%;
+    right: 4%;
+}
+
+.planet-achievement {
+    bottom: 23%;
+    right: 4%;
+}
+
+.planet-family {
+    bottom: 5%;
+    left: 42%;
+}
+
+.planet-friends {
+    bottom: 23%;
+    left: 4%;
+}
+
+.planet-experience {
+    top: 23%;
+    left: 4%;
+}
+
+.planet-gallery {
+    top: 5%;
+    left: 8%;
+}
+
+.planet-contact {
+    bottom: 5%;
+    right: 8%;
+}
+
+.artwork-caption {
+    color: #A99BFF;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-style: italic;
+}
+
+@media(max-width:600px) {
+
+    .farah-artwork {
+        height: 430px;
+        transform: scale(.85);
+        margin: 0 auto;
+    }
+
+    .orbit-three {
+        width: 420px;
+        height: 420px;
+    }
+
+    .orbit-two {
+        width: 300px;
+        height: 300px;
+    }
+
+    .artwork-planet {
+        width: 72px;
+        height: 72px;
+        border-radius: 17px;
+    }
+
+    .artwork-planet > span {
+        font-size: 19px;
+    }
+
+    .artwork-planet strong {
+        font-size: 6px;
+    }
+
+    .planet-about {
+        top: 2%;
+    }
+
+    .planet-family {
+        bottom: 2%;
+    }
+
+}
+
+/* =========================================
+   FARAHVERSE - GALAXY ARTWORK FIX
+   OVERRIDE OLD CONFLICTING STYLES
+========================================= */
+
+.farah-artwork-section {
+    position: relative !important;
+    display: block !important;
+    overflow: hidden !important;
+    padding: 85px 7% !important;
+}
+
+.farah-artwork-section .section-heading {
+    max-width: 850px !important;
+    margin: 0 auto 35px !important;
+    text-align: center !important;
+}
+
+.farah-artwork-section .section-heading h2 {
+    display: block !important;
+    text-align: center !important;
+    line-height: 1.35 !important;
+}
+
+.farah-artwork-section .section-heading h2 span {
+    display: block !important;
+    margin-top: 5px !important;
+}
+
+.farah-galaxy-artwork {
+    position: relative !important;
+    isolation: isolate !important;
+    display: block !important;
+
+    width: min(100%, 760px) !important;
+    height: 650px !important;
+
+    margin: 35px auto 20px !important;
+    overflow: hidden !important;
+
+    border: 1px solid rgba(105,217,245,.3) !important;
+    border-radius: 28px !important;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(88,101,217,.35),
+            transparent 48%
+        ),
+        linear-gradient(
+            145deg,
+            #172448,
+            #080F24
+        ) !important;
+}
+
+/* NEBULA */
+
+.farah-galaxy-artwork .galaxy-nebula {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+
+    width: 430px !important;
+    height: 430px !important;
+
+    transform: translate(-50%,-50%) !important;
+
+    border-radius: 50% !important;
+
+    background: radial-gradient(
+        circle,
+        rgba(88,101,217,.4),
+        rgba(169,155,255,.15) 45%,
+        transparent 72%
+    ) !important;
+
+    filter: blur(25px) !important;
+    z-index: 0 !important;
+
+    animation: farahNebulaPulse 6s ease-in-out infinite alternate !important;
+}
+
+@keyframes farahNebulaPulse {
+    to {
+        opacity: .65;
+        transform: translate(-50%,-50%) scale(1.18);
+    }
+}
+
+/* ORBIT RINGS */
+
+.farah-galaxy-artwork .galaxy-orbit {
+    position: absolute !important;
+
+    top: 50% !important;
+    left: 50% !important;
+
+    display: block !important;
+
+    border: 1px solid rgba(105,217,245,.35) !important;
+    border-radius: 50% !important;
+
+    transform: translate(-50%,-50%) !important;
+
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+.farah-galaxy-artwork .galaxy-orbit.orbit-one {
+    width: 260px !important;
+    height: 260px !important;
+
+    border-style: dashed !important;
+
+    animation: farahOrbitSpin 35s linear infinite !important;
+}
+
+.farah-galaxy-artwork .galaxy-orbit.orbit-two {
+    width: 440px !important;
+    height: 440px !important;
+
+    border-color: rgba(169,155,255,.35) !important;
+
+    animation: farahOrbitSpin 50s linear infinite reverse !important;
+}
+
+.farah-galaxy-artwork .galaxy-orbit.orbit-three {
+    width: 610px !important;
+    height: 610px !important;
+
+    border-color: rgba(105,217,245,.15) !important;
+}
+
+@keyframes farahOrbitSpin {
+    from {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+/* CENTRAL FARAHVERSE PLANET */
+
+.farah-galaxy-artwork .galaxy-core {
+    position: absolute !important;
+
+    top: 50% !important;
+    left: 50% !important;
+
+    z-index: 5 !important;
+
+    width: 175px !important;
+    height: 175px !important;
+
+    display: grid !important;
+    place-items: center !important;
+
+    transform: translate(-50%,-50%) !important;
+
+    border: 2px solid rgba(105,217,245,.7) !important;
+    border-radius: 50% !important;
+
+    background: radial-gradient(
+        circle,
+        #5865D9,
+        #202F58 75%
+    ) !important;
+
+    box-shadow:
+        0 0 35px rgba(88,101,217,.5),
+        inset 0 0 30px rgba(169,155,255,.3) !important;
+}
+
+.farah-galaxy-artwork .galaxy-core-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.farah-galaxy-artwork .galaxy-core-inner span {
+    width: 78px !important;
+    height: 78px !important;
+
+    display: grid !important;
+    place-items: center !important;
+
+    border: 3px solid white !important;
+    border-radius: 50% !important;
+
+    background: linear-gradient(
+        135deg,
+        #69D9F5,
+        #A99BFF
+    ) !important;
+
+    color: white !important;
+    font-size: 40px !important;
+    font-weight: 900 !important;
+}
+
+.farah-galaxy-artwork .galaxy-core-inner small {
+    color: white !important;
+    font-size: 8px !important;
+    font-weight: bold !important;
+    letter-spacing: 2px !important;
+}
+
+/* DESTINATION PLANETS */
+
+.farah-galaxy-artwork .galaxy-planet {
+    position: absolute !important;
+    z-index: 8 !important;
+
+    width: 105px !important;
+    min-height: 100px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+
+    border: 1px solid rgba(105,217,245,.6) !important;
+    border-radius: 18px !important;
+
+    background: linear-gradient(
+        145deg,
+        #354E9B,
+        #172448
+    ) !important;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,.35) !important;
+
+    color: white !important;
+    text-decoration: none !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    transition: .35s ease !important;
+}
+
+.farah-galaxy-artwork .galaxy-planet span {
+    display: block !important;
+    color: white !important;
+    font-size: 27px !important;
+    line-height: 1 !important;
+}
+
+.farah-galaxy-artwork .galaxy-planet strong {
+    display: block !important;
+    color: #69D9F5 !important;
+    font-size: 7px !important;
+    letter-spacing: 1px !important;
+    text-align: center !important;
+}
+
+.farah-galaxy-artwork .galaxy-planet:hover {
+    transform: translateY(-8px) scale(1.08) !important;
+
+    border-color: #A99BFF !important;
+
+    box-shadow: 0 0 30px rgba(105,217,245,.35) !important;
+}
+
+/* PLANET POSITIONS */
+
+.farah-galaxy-artwork .planet-one {
+    top: 7% !important;
+    left: calc(50% - 52px) !important;
+}
+
+.farah-galaxy-artwork .planet-two {
+    top: 20% !important;
+    right: 12% !important;
+}
+
+.farah-galaxy-artwork .planet-three {
+    top: 43% !important;
+    right: 2% !important;
+}
+
+.farah-galaxy-artwork .planet-four {
+    bottom: 12% !important;
+    right: 13% !important;
+}
+
+.farah-galaxy-artwork .planet-five {
+    bottom: 7% !important;
+    left: calc(50% - 52px) !important;
+}
+
+.farah-galaxy-artwork .planet-six {
+    bottom: 24% !important;
+    left: 12% !important;
+}
+
+.farah-galaxy-artwork .planet-seven {
+    top: 43% !important;
+    left: 2% !important;
+}
+
+.farah-galaxy-artwork .planet-eight {
+    top: 20% !important;
+    left: 12% !important;
+}
+
+/* FLOATING STARS */
+
+.farah-galaxy-artwork .art-star {
+    position: absolute !important;
+    z-index: 6 !important;
+
+    display: block !important;
+
+    color: #69D9F5 !important;
+    font-size: 22px !important;
+
+    animation: farahStarTwinkle 3s ease-in-out infinite alternate !important;
+}
+
+.farah-galaxy-artwork .art-star-one {
+    top: 12% !important;
+    left: 37% !important;
+}
+
+.farah-galaxy-artwork .art-star-two {
+    top: 31% !important;
+    right: 29% !important;
+}
+
+.farah-galaxy-artwork .art-star-three {
+    bottom: 18% !important;
+    left: 36% !important;
+}
+
+.farah-galaxy-artwork .art-star-four {
+    bottom: 31% !important;
+    right: 34% !important;
+}
+
+@keyframes farahStarTwinkle {
+    to {
+        opacity: .35;
+        transform: scale(1.3) rotate(18deg);
+    }
+}
+
+/* CAPTION */
+
+.farah-artwork-section .artwork-caption {
+    max-width: 650px !important;
+    margin: 20px auto 0 !important;
+    text-align: center !important;
+}
+
+.farah-artwork-section .artwork-caption span {
+    color: #69D9F5 !important;
+    font-size: 9px !important;
+    letter-spacing: 2px !important;
+}
+
+.farah-artwork-section .artwork-caption p {
+    color: #AAB6D5 !important;
+    font-size: 13px !important;
+    font-style: italic !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .farah-artwork-section {
+        padding: 60px 5% !important;
+    }
+
+    .farah-galaxy-artwork {
+        height: 460px !important;
+        border-radius: 18px !important;
+    }
+
+    .farah-galaxy-artwork .galaxy-orbit.orbit-one {
+        width: 210px !important;
+        height: 210px !important;
+    }
+
+    .farah-galaxy-artwork .galaxy-orbit.orbit-two {
+        width: 320px !important;
+        height: 320px !important;
+    }
+
+    .farah-galaxy-artwork .galaxy-orbit.orbit-three {
+        width: 430px !important;
+        height: 430px !important;
+    }
+
+    .farah-galaxy-artwork .galaxy-core {
+        width: 125px !important;
+        height: 125px !important;
+    }
+
+    .farah-galaxy-artwork .galaxy-core-inner span {
+        width: 58px !important;
+        height: 58px !important;
+        font-size: 30px !important;
+    }
+
+    .farah-galaxy-artwork .galaxy-planet {
+        width: 73px !important;
+        min-height: 70px !important;
+        border-radius: 13px !important;
+    }
+
+    .farah-galaxy-artwork .galaxy-planet span {
+        font-size: 19px !important;
+    }
+
+    .farah-galaxy-artwork .galaxy-planet strong {
+        font-size: 6px !important;
+    }
+
+    .farah-galaxy-artwork .planet-one {
+        top: 3% !important;
+        left: calc(50% - 36px) !important;
+    }
+
+    .farah-galaxy-artwork .planet-two {
+        top: 20% !important;
+        right: 2% !important;
+    }
+
+    .farah-galaxy-artwork .planet-three {
+        top: 44% !important;
+        right: 0 !important;
+    }
+
+    .farah-galaxy-artwork .planet-four {
+        bottom: 12% !important;
+        right: 3% !important;
+    }
+
+    .farah-galaxy-artwork .planet-five {
+        bottom: 3% !important;
+        left: calc(50% - 36px) !important;
+    }
+
+    .farah-galaxy-artwork .planet-six {
+        bottom: 12% !important;
+        left: 3% !important;
+    }
+
+    .farah-galaxy-artwork .planet-seven {
+        top: 44% !important;
+        left: 0 !important;
+    }
+
+    .farah-galaxy-artwork .planet-eight {
+        top: 20% !important;
+        left: 2% !important;
+    }
+
+}
+
+/* =========================================
+   UiTM DI HATIKU - SPECIAL MULTIMEDIA
+========================================= */
+
+.uitm-special-section {
+    position: relative;
+    z-index: 2;
+
+    padding: 100px 7%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 50%,
+            rgba(88,101,217,.15),
+            transparent 65%
+        );
+}
+
+.uitm-special-content {
+    max-width: 950px;
+    margin: auto;
+    text-align: center;
+}
+
+.uitm-special-content h2 {
+    margin: 20px 0 12px;
+
+    color: #F3F5FF;
+
+    font-size: clamp(38px,5vw,58px);
+    font-weight: 800;
+}
+
+.uitm-special-content h2 span {
+    background: linear-gradient(
+        100deg,
+        #69D9F5,
+        #A99BFF
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+.uitm-special-content h3 {
+    color: #C4B9FF;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    margin-bottom: 17px;
+}
+
+.uitm-intro {
+    max-width: 650px;
+
+    margin: 0 auto 35px;
+
+    color: #AAB6D5;
+
+    font-size: 12px;
+    line-height: 2;
+}
+
+/* VIDEO CARD */
+
+.uitm-video-card {
+    max-width: 850px;
+
+    margin: 35px auto;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        #202F58,
+        #101A38
+    );
+
+    border: 1px solid rgba(105,217,245,.3);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.25),
+        0 0 30px rgba(88,101,217,.1);
+}
+
+/* VIDEO HEADER */
+
+.uitm-video-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 22px 25px;
+
+    text-align: left;
+}
+
+.uitm-video-header > div > span {
+    color: #69D9F5;
+
+    font-size: 8px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.uitm-video-header h3 {
+    margin: 9px 0 0;
+
+    color: white;
+
+    font-size: 19px;
+}
+
+.uitm-official-label {
+    padding: 9px 12px;
+
+    border: 1px solid rgba(105,217,245,.35);
+
+    border-radius: 20px;
+
+    color: #69D9F5;
+
+    font-size: 7px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+/* RESPONSIVE VIDEO */
+
+.uitm-video-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    background: #080F24;
+}
+
+.uitm-video-wrapper iframe {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+}
+
+/* VIDEO FOOTER */
+
+.uitm-video-footer {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    padding: 16px 22px;
+
+    border-top: 1px solid rgba(170,190,255,.12);
+}
+
+.uitm-video-footer span {
+    color: #AAB6D5;
+
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.uitm-video-footer a {
+    color: #69D9F5;
+
+    font-size: 9px;
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.uitm-video-footer a:hover {
+    color: #A99BFF;
+}
+
+/* PERSONAL MESSAGE */
+
+.uitm-personal-message {
+    max-width: 650px;
+
+    margin: 45px auto 0;
+
+    padding: 25px;
+
+    border: 1px solid rgba(169,155,255,.22);
+
+    border-radius: 16px;
+
+    background: rgba(169,155,255,.045);
+}
+
+.uitm-message-symbol {
+    color: #69D9F5;
+
+    font-size: 25px;
+
+    margin-bottom: 13px;
+}
+
+.uitm-personal-message p {
+    color: #D4DDF3;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+    font-style: italic;
+
+    line-height: 2;
+}
+
+.uitm-personal-message span {
+    display: block;
+
+    margin-top: 18px;
+
+    color: #69D9F5;
+
+    font-size: 8px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .uitm-special-section {
+        padding: 70px 5%;
+    }
+
+    .uitm-video-header {
+        padding: 17px;
+    }
+
+    .uitm-video-header h3 {
+        font-size: 15px;
+    }
+
+    .uitm-official-label {
+        font-size: 6px;
+        padding: 7px;
+    }
+
+    .uitm-video-footer {
+        padding: 14px;
+    }
+
+    .uitm-personal-message {
+        padding: 20px;
+    }
+
+}
+
+/* FARAHVERSE AI VIDEO */
+
+.uitm-video-wrapper video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #080F24;
+    border: none;
+}
+
+.uitm-video-footer a {
+    transition: .3s ease;
+}
+
+.uitm-video-footer a:hover {
+    color: #A99BFF;
+    text-shadow: 0 0 12px rgba(169,155,255,.4);
+}
+
+.uitm-personal-message {
+    position: relative;
+    overflow: hidden;
+}
+
+.uitm-personal-message p {
+    line-height: 2;
+}
+
+@media(max-width:600px) {
+    .uitm-video-wrapper video {
+        width: 100%;
+        height: auto;
+    }
+}
