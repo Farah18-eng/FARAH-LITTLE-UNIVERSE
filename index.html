@@ -1,0 +1,2789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080F24">
+    <meta name="color-scheme" content="dark">
+    <meta name="author" content="Nurfarah Eleyana">
+    <meta name="keywords" content="Nurfarah Eleyana, FARAHVERSE, personal website, Information Management, UiTM Segamat">
+    <meta name="description" content="Explore FARAHVERSE, the personal digital world of Nurfarah Eleyana, featuring her background, education, experiences, achievements, family, friends and memories.">
+
+    <title>Home | FARAHVERSE - Nurfarah Eleyana</title>
+
+    <!-- FARAHVERSE HOME STYLESHEETS -->
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/home-guidelines.css">
+
+
+    <!-- DIGITAL MOTION BACKGROUND: subtle network particles and scanning lines -->
+    <style>
+      .universe-background{isolation:isolate}
+      .digital-motion-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:.72;pointer-events:none}
+      .universe-grid-bg{animation:fvGridDrift 34s linear infinite;opacity:.72}
+      .universe-background:after{content:"";position:absolute;inset:-100% 0 auto;height:65%;z-index:2;pointer-events:none;background:linear-gradient(180deg,transparent,rgba(105,217,245,.035),transparent);animation:fvScan 16s linear infinite}
+      @keyframes fvGridDrift{from{background-position:0 0}to{background-position:110px 110px}}
+      @keyframes fvScan{from{transform:translateY(-20%)}to{transform:translateY(230%)}}
+      .nebula-one{animation-duration:25s}.nebula-two{animation-duration:31s}.nebula-three{animation-duration:28s}
+      @media(prefers-reduced-motion:reduce){.digital-motion-canvas{display:none}.universe-grid-bg,.universe-background:after{animation:none!important}}
+    </style>
+
+    <!-- KEYBOARD ACCESSIBILITY: SKIP LINK -->
+    <style>
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 8px;
+            z-index: 10000;
+            padding: 12px 18px;
+            border-radius: 8px;
+            background: #69D9F5;
+            color: #080F24;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            left: 12px;
+        }
+        /* Keep one primary H1 for the Home page; the intro is a secondary heading. */
+        .entry-clean .entry-title {
+            margin: 0 0 23px;
+            color: #F3F5FF;
+            font-size: clamp(44px, 6vw, 76px);
+            font-weight: 800;
+            line-height: 1.12;
+            letter-spacing: -2px;
+        }
+        .entry-clean .entry-title span {
+            background: linear-gradient(100deg, #69D9F5, #8D9BFF, #C0A7FF);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        @media (max-width: 600px) {
+            .entry-clean .entry-title {
+                font-size: 42px;
+                letter-spacing: -1px;
+            }
+        }
+    </style>
+
+    <!-- FARAHVERSE HYBRID INTERACTIVE FEATURES: PAGE-LOCAL STYLES -->
+    <style>
+      .fv-feature-section{position:relative;margin:0 auto;padding:clamp(58px,8vw,100px) clamp(18px,5vw,70px);max-width:1500px;color:#f3f5ff}
+      .fv-feature-heading{max-width:760px;margin:0 auto 34px;text-align:center}
+      .fv-feature-heading h2{font-size:clamp(30px,4.5vw,52px);line-height:1.12;margin:12px 0;color:#f7f7ff}
+      .fv-feature-heading h2 span{background:linear-gradient(100deg,#69d9f5,#a6a6ff,#d3b6ff);background-clip:text;-webkit-background-clip:text;color:transparent}
+      .fv-feature-heading p{color:#c4cbe6;line-height:1.75;margin:0 auto;max-width:650px}
+      .fv-feature-kicker{color:#8fe8ff;font-size:11px;letter-spacing:2.4px;font-weight:800}
+      .fv-glass-card{background:linear-gradient(135deg,rgba(28,48,91,.78),rgba(20,25,62,.58));border:1px solid rgba(151,196,255,.23);box-shadow:0 18px 55px rgba(0,0,0,.2),inset 0 1px rgba(255,255,255,.08);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:24px}
+      .fv-interactive-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1180px;margin:0 auto}
+      .fv-star-card{padding:24px;min-height:235px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;position:relative;overflow:hidden}
+      .fv-star-card:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-65px;top:-65px;background:radial-gradient(circle,rgba(105,217,245,.2),transparent 70%);pointer-events:none}
+      .fv-star-symbol{font-size:42px;line-height:1;color:#a9eaff;text-shadow:0 0 22px rgba(105,217,245,.75)}
+      .fv-star-card h3{font-size:19px;margin:16px 0 8px;color:#fff}
+      .fv-star-card p{font-size:13px;line-height:1.65;color:#c5cde8;margin:0 0 18px}
+      .fv-action-button{border:1px solid rgba(143,232,255,.5);border-radius:999px;background:rgba(105,217,245,.1);color:#a8edff;padding:11px 16px;font:inherit;font-size:11px;font-weight:800;letter-spacing:1px;cursor:pointer;transition:.25s}
+      .fv-action-button:hover,.fv-action-button:focus-visible{background:rgba(105,217,245,.22);transform:translateY(-2px);outline:2px solid #8fe8ff;outline-offset:3px}
+      .fv-star-detail{max-width:850px;margin:22px auto 0;padding:22px 25px;display:none}
+      .fv-star-detail.is-visible{display:block;animation:fvRise .35s ease both}
+      .fv-star-detail h3{margin:0 0 8px;color:#a9eaff}
+      .fv-star-detail p{margin:0;color:#e0e5fa;line-height:1.75}
+      .fv-timeline{max-width:980px;margin:0 auto;padding:28px 30px}
+      .fv-timeline-list{position:relative;display:grid;gap:18px;margin:0;padding:0;list-style:none}
+      .fv-timeline-list:before{content:"";position:absolute;left:15px;top:12px;bottom:12px;width:2px;background:linear-gradient(#69d9f5,#bba6ff,rgba(187,166,255,.15))}
+      .fv-timeline-item{position:relative;padding:2px 0 2px 52px}
+      .fv-timeline-dot{position:absolute;left:7px;top:7px;width:18px;height:18px;border-radius:50%;background:#101b3b;border:3px solid #8fe8ff;box-shadow:0 0 18px rgba(105,217,245,.65)}
+      .fv-timeline-item h3{margin:0 0 6px;color:#fff;font-size:18px}
+      .fv-timeline-item p{margin:0;color:#c6cde6;line-height:1.65;font-size:14px}
+      .fv-timeline-item small{display:block;color:#a9a5df;letter-spacing:1.5px;font-size:10px;font-weight:800;margin-bottom:5px}
+      .fv-quiz-wrap{max-width:850px;margin:0 auto;padding:clamp(22px,4vw,38px)}
+      .fv-quiz-progress{height:6px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden;margin:18px 0 24px}
+      .fv-quiz-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#69d9f5,#c0a7ff);transition:width .25s}
+      .fv-quiz-question{font-size:clamp(19px,3vw,25px);line-height:1.4;color:#fff;margin:0 0 18px}
+      .fv-quiz-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+      .fv-quiz-option{padding:14px 16px;border-radius:14px;text-align:left;color:#e8ecff;background:rgba(255,255,255,.055);border:1px solid rgba(170,190,255,.2);font:inherit;cursor:pointer;transition:.2s}
+      .fv-quiz-option:hover,.fv-quiz-option:focus-visible{border-color:#8fe8ff;background:rgba(105,217,245,.12);outline:2px solid #8fe8ff;outline-offset:2px}
+      .fv-quiz-option[disabled]{cursor:default;opacity:.8}
+      .fv-quiz-feedback{min-height:28px;margin:16px 0 0;color:#a9eaff;font-size:14px;line-height:1.5}
+      .fv-quiz-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}
+      .fv-quiz-result{display:none;text-align:center;padding:20px 0 4px}
+      .fv-quiz-result.is-visible{display:block}
+      .fv-quiz-result strong{display:block;font-size:clamp(34px,6vw,54px);color:#a9eaff;margin:8px 0}
+      .fv-capsule-wrap{max-width:850px;margin:0 auto;padding:clamp(24px,5vw,48px);text-align:center;overflow:hidden;position:relative}
+      .fv-capsule-icon{font-size:52px;color:#b9a9ff;text-shadow:0 0 26px rgba(185,169,255,.65)}
+      .fv-capsule-letter{max-height:0;opacity:0;overflow:hidden;transition:max-height .7s ease,opacity .5s ease,margin .5s ease}
+      .fv-capsule-letter.is-open{max-height:420px;opacity:1;margin-top:22px}
+      .fv-capsule-letter-inner{padding:24px;border-radius:18px;background:rgba(8,15,36,.48);border:1px solid rgba(185,169,255,.28);text-align:left}
+      .fv-capsule-letter-inner p{color:#dce3ff;line-height:1.85;margin:0 0 12px}
+      .fv-capsule-letter-inner p:last-child{margin-bottom:0}
+      .fv-section-divider{width:min(160px,35%);height:1px;margin:0 auto;background:linear-gradient(90deg,transparent,rgba(143,232,255,.65),transparent)}
+      @keyframes fvRise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+      @media(max-width:900px){.fv-interactive-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+      @media(max-width:600px){.fv-interactive-grid,.fv-quiz-options{grid-template-columns:1fr}.fv-timeline{padding:22px 17px}.fv-star-card{min-height:205px}.fv-feature-section{padding-left:16px;padding-right:16px}}
+      @media(prefers-reduced-motion:reduce){.fv-star-detail.is-visible{animation:none}.fv-action-button,.fv-capsule-letter{transition:none}}
+      .fv-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    </style>
+
+
+    <style>
+      .digital-workspace-map { position:relative; overflow:hidden; border:1px solid rgba(160,145,255,.48); border-radius:24px; box-shadow:0 0 34px rgba(116,88,255,.18); }
+      .digital-workspace-map img { display:block; width:100%; height:auto; border-radius:inherit; }
+      .digital-workspace-map area { cursor:pointer; }
+      .guideline-map-text-links a { margin:.25rem; }
+      .guideline-map-feedback { color:#c9c4f4; }
+      @media (prefers-reduced-motion: no-preference) {
+        .digital-workspace-map { animation: workspaceGlow 7s ease-in-out infinite alternate; }
+        @keyframes workspaceGlow { from { box-shadow:0 0 22px rgba(116,88,255,.14); } to { box-shadow:0 0 38px rgba(83,220,255,.25); } }
+      }
+    </style>
+
+
+    <!-- FARAHVERSE PREMIUM HYBRID HOME ENHANCEMENTS -->
+    <style>
+      :root{--fv-cyan:#69d9f5;--fv-violet:#b79cff;--fv-lilac:#e1c9ff;--fv-ink:#080f24}
+      /* Cinematic loading overlay */
+      #fvLoadingScreen{position:fixed;inset:0;z-index:20000;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 45%,#20265a 0%,#101735 42%,#070c1e 100%);color:#f7f5ff;transition:opacity .65s ease,visibility .65s ease}
+      #fvLoadingScreen.is-loaded{opacity:0;visibility:hidden;pointer-events:none}
+      .fv-loader-inner{width:min(420px,86vw);text-align:center;padding:28px}
+      .fv-loader-orb{width:76px;height:76px;margin:0 auto 22px;border:1px solid rgba(143,232,255,.6);border-radius:50%;display:grid;place-items:center;box-shadow:0 0 28px rgba(105,217,245,.32),inset 0 0 24px rgba(183,156,255,.2);animation:fvLoaderPulse 2s ease-in-out infinite}
+      .fv-loader-orb span{font-size:32px;color:#a8edff;text-shadow:0 0 18px #69d9f5}
+      .fv-loader-title{font-size:clamp(25px,5vw,36px);font-weight:800;letter-spacing:4px;background:linear-gradient(90deg,#8fe8ff,#d9c3ff,#8fe8ff);background-size:200% auto;background-clip:text;-webkit-background-clip:text;color:transparent;animation:fvShimmer 4s linear infinite}
+      .fv-loader-status{margin:12px 0 18px;color:#bfc9e7;font-size:10px;letter-spacing:2px}
+      .fv-loader-track{height:3px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden}
+      .fv-loader-track span{display:block;width:38%;height:100%;border-radius:99px;background:linear-gradient(90deg,#69d9f5,#c3a8ff);box-shadow:0 0 14px #69d9f5;animation:fvLoaderBar 1.35s ease-in-out infinite}
+      @keyframes fvLoaderPulse{50%{transform:scale(1.08);box-shadow:0 0 42px rgba(105,217,245,.55),inset 0 0 30px rgba(183,156,255,.35)}}
+      @keyframes fvShimmer{to{background-position:200% center}}
+      @keyframes fvLoaderBar{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+      /* Hybrid digital atmosphere layered over the existing galaxy background */
+      .universe-background{background-image:radial-gradient(circle at 18% 22%,rgba(105,217,245,.08),transparent 28%),radial-gradient(circle at 82% 70%,rgba(183,156,255,.11),transparent 30%)}
+      .universe-grid-bg{background-size:58px 58px!important;mask-image:linear-gradient(to bottom,rgba(0,0,0,.8),transparent 95%)}
+      .digital-motion-canvas{mix-blend-mode:screen;opacity:.82}
+      .universe-background:before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(115deg,transparent 0%,rgba(105,217,245,.035) 48%,transparent 52%);background-size:220% 100%;animation:fvDataSweep 18s linear infinite}
+      @keyframes fvDataSweep{to{background-position:-220% 0}}
+      /* Scroll reveal: elements remain visible if JS is unavailable */
+      .fv-reveal-ready .fv-reveal{opacity:0;transform:translateY(12px);transition:opacity .38s ease,transform .38s cubic-bezier(.2,.7,.2,1)}
+      .fv-reveal-ready .fv-reveal.is-in-view{opacity:1;transform:translateY(0) scale(1)}
+      .fv-reveal-ready .fv-reveal[data-reveal-delay="1"]{transition-delay:.025s}
+      .fv-reveal-ready .fv-reveal[data-reveal-delay="2"]{transition-delay:.05s}
+      .fv-reveal-ready .fv-reveal[data-reveal-delay="3"]{transition-delay:.075s}
+      /* Custom cursor - desktop pointer only */
+      .fv-cursor-dot,.fv-cursor-ring{position:fixed;left:0;top:0;z-index:19999;pointer-events:none;border-radius:50%;opacity:0;transform:translate(-50%,-50%);transition:opacity .2s, width .2s,height .2s,border-color .2s,background .2s}
+      .fv-cursor-dot{width:6px;height:6px;background:#a9edff;box-shadow:0 0 12px #69d9f5}
+      .fv-cursor-ring{width:32px;height:32px;border:1px solid rgba(143,232,255,.72);box-shadow:0 0 18px rgba(105,217,245,.2)}
+      body.fv-custom-cursor,.fv-custom-cursor a,.fv-custom-cursor button{cursor:none}
+      .fv-cursor-ring.is-hover{width:48px;height:48px;border-color:#d2baff;background:rgba(183,156,255,.08)}
+      .fv-cursor-dot.is-visible,.fv-cursor-ring.is-visible{opacity:1}
+      /* Premium photo treatment */
+      .home-photo,.memory-feature,.guideline-thumbnail-link{transform-style:preserve-3d}
+      .home-photo img,.guideline-thumbnail-link img,.memory-feature img{transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .65s ease}
+      .home-photo:hover img,.home-photo:focus-within img,.guideline-thumbnail-link:hover img,.memory-feature:hover img{transform:scale(1.055);filter:saturate(1.12) brightness(1.08)}
+      .home-photo:after{content:"";position:absolute;inset:0;border:1px solid rgba(143,232,255,.0);border-radius:inherit;pointer-events:none;transition:border-color .35s,box-shadow .35s}
+      .home-photo:hover:after{border-color:rgba(143,232,255,.48);box-shadow:inset 0 0 26px rgba(105,217,245,.09)}
+      /* Music progress and volume controls */
+      .fv-music-extra{display:grid;grid-template-columns:1fr auto;gap:7px 12px;align-items:center;min-width:150px;margin:0 10px}
+      .fv-music-progress{width:100%;height:4px;accent-color:#8fe8ff;cursor:pointer}
+      .fv-music-time{font-size:9px;color:#bfc9e7;font-variant-numeric:tabular-nums;white-space:nowrap}
+      .fv-music-volume{width:66px;height:3px;accent-color:#c3a8ff;cursor:pointer}
+      .fv-music-extra label{font-size:9px;color:#bfc9e7;letter-spacing:1px}
+      /* Dashboard live status accent */
+      .fv-live-status{display:inline-flex;align-items:center;gap:7px;color:#a9edff;font-size:10px;letter-spacing:1.4px;font-weight:800}
+      .fv-live-status:before{content:"";width:7px;height:7px;border-radius:50%;background:#70e6b7;box-shadow:0 0 12px #70e6b7;animation:fvStatusPulse 1.8s ease-in-out infinite}
+      @keyframes fvStatusPulse{50%{opacity:.45;transform:scale(.78)}}
+      @media(max-width:760px){.fv-music-extra{min-width:100px;margin:0 5px}.fv-music-volume{width:48px}.fv-cursor-dot,.fv-cursor-ring{display:none}}
+      @media(hover:none),(pointer:coarse){.fv-cursor-dot,.fv-cursor-ring{display:none}}
+      @media(prefers-reduced-motion:reduce){#fvLoadingScreen,.fv-loader-orb,.fv-loader-title,.fv-loader-track span,.universe-background:before,.fv-live-status:before{animation:none!important;transition:none!important}.fv-reveal-ready .fv-reveal{opacity:1!important;transform:none!important;transition:none!important}.home-photo img,.guideline-thumbnail-link img,.memory-feature img{transition:none!important}}
+    </style>
+
+
+<style id="fv-next-upgrade-styles">
+:root{--fv-cyan:#69d9f5;--fv-lilac:#c0a7ff;--fv-ink:#080f24}
+.fv-toast{position:fixed;right:22px;top:88px;z-index:15000;width:min(360px,calc(100vw - 32px));padding:17px 18px;border:1px solid rgba(143,232,255,.38);border-radius:18px;background:rgba(13,24,57,.91);backdrop-filter:blur(18px);box-shadow:0 15px 50px rgba(0,0,0,.35);color:#f5f6ff;transform:translateX(125%);opacity:0;transition:transform .45s ease,opacity .45s ease}
+.fv-toast.show{transform:translateX(0);opacity:1}.fv-toast-top{display:flex;justify-content:space-between;gap:12px;align-items:center}.fv-toast strong{color:#a9eaff}.fv-toast p{margin:8px 0 0;color:#cbd3ed;font-size:13px;line-height:1.55}.fv-toast button{border:0;background:transparent;color:#dce7ff;font-size:22px;cursor:pointer}
+.fv-extra-section{max-width:1180px;margin:38px auto;padding:24px clamp(16px,4vw,36px);color:#f4f6ff}.fv-extra-heading{text-align:center;margin-bottom:20px}.fv-extra-heading span{font-size:10px;letter-spacing:2px;color:#8fe8ff;font-weight:800}.fv-extra-heading h2{font-size:clamp(25px,4vw,38px);margin:9px 0;color:#fff}.fv-extra-heading p{color:#c4cbe6;line-height:1.65}
+.fv-weather-card,.fv-badge-card,.fv-wish-card{padding:22px;border:1px solid rgba(151,196,255,.24);border-radius:22px;background:linear-gradient(135deg,rgba(28,48,91,.76),rgba(20,25,62,.64));backdrop-filter:blur(15px);box-shadow:0 18px 50px rgba(0,0,0,.18)}
+.fv-weather-row{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.fv-weather-temp{font-size:clamp(34px,6vw,54px);font-weight:800;color:#a9eaff}.fv-weather-meta{display:flex;gap:14px;flex-wrap:wrap;color:#d2d9f1;font-size:12px}.fv-weather-note{color:#aeb9dd;font-size:12px;margin:12px 0 0}.fv-weather-icon{font-size:42px;filter:drop-shadow(0 0 12px rgba(105,217,245,.5))}
+.fv-badges{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.fv-badge{padding:16px 12px;text-align:center;border-radius:16px;border:1px solid rgba(160,175,230,.18);background:rgba(255,255,255,.045);opacity:.48;filter:grayscale(1);transition:.25s}.fv-badge.unlocked{opacity:1;filter:none;border-color:rgba(143,232,255,.55);box-shadow:0 0 22px rgba(105,217,245,.12)}.fv-badge b{display:block;font-size:25px;margin-bottom:7px}.fv-badge strong{display:block;font-size:12px;color:#fff}.fv-badge small{display:block;margin-top:5px;color:#bac5e4;font-size:10px;line-height:1.4}
+.fv-wish-form{display:grid;gap:12px}.fv-wish-form input,.fv-wish-form textarea,.fv-console-input{width:100%;box-sizing:border-box;border:1px solid rgba(143,232,255,.3);border-radius:12px;background:rgba(5,12,32,.55);color:#fff;padding:13px 14px;font:inherit}.fv-wish-form textarea{min-height:88px;resize:vertical}.fv-wish-form button,.fv-panel-button,.fv-console-close{border:1px solid rgba(143,232,255,.5);border-radius:999px;background:rgba(105,217,245,.12);color:#a9eaff;padding:11px 16px;font:inherit;font-size:12px;font-weight:800;cursor:pointer}.fv-wish-list{display:grid;gap:9px;margin-top:16px}.fv-wish-item{padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.055);color:#dce3ff;font-size:13px;line-height:1.55}.fv-wish-item strong{color:#a9eaff}
+.fv-quick-launcher{position:fixed;right:18px;bottom:22px;z-index:14000;display:grid;gap:8px}.fv-quick-toggle{width:54px;height:54px;border-radius:50%;border:1px solid rgba(143,232,255,.65);background:linear-gradient(135deg,#253d78,#452d79);color:#fff;font-size:22px;box-shadow:0 0 26px rgba(105,217,245,.25);cursor:pointer}.fv-quick-menu{display:none;gap:7px;padding:10px;border:1px solid rgba(143,232,255,.3);border-radius:18px;background:rgba(9,18,44,.94);backdrop-filter:blur(18px)}.fv-quick-menu.open{display:grid}.fv-panel-button{white-space:nowrap;text-align:left;text-decoration:none;display:block}
+.fv-console{position:fixed;inset:0;z-index:19000;display:none;place-items:center;padding:18px;background:rgba(2,6,20,.78);backdrop-filter:blur(10px)}.fv-console.open{display:grid}.fv-console-window{width:min(620px,100%);padding:22px;border:1px solid rgba(143,232,255,.4);border-radius:20px;background:#0b1533;box-shadow:0 20px 80px rgba(0,0,0,.5);color:#edf3ff}.fv-console-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.fv-console-output{min-height:105px;max-height:220px;overflow:auto;padding:14px;margin:15px 0;border-radius:12px;background:#050b1d;color:#a9eaff;font:13px/1.7 Consolas,monospace;white-space:pre-wrap}.fv-console-form{display:flex;gap:8px}.fv-console-form input{flex:1;min-width:0}.fv-console-form button{border:1px solid rgba(143,232,255,.5);border-radius:12px;padding:10px 14px;background:#17345a;color:#b8f0ff;cursor:pointer}
+.fv-page-transition{position:fixed;inset:0;z-index:18000;display:grid;place-items:center;background:radial-gradient(circle at center,#28346f 0%,#101735 42%,#050916 100%);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .32s ease,visibility .32s ease}.fv-page-transition.active{opacity:1;visibility:visible}.fv-transition-orb{width:90px;height:90px;border-radius:50%;border:2px solid #8fe8ff;box-shadow:0 0 25px #69d9f5,inset 0 0 25px #8c78ff;animation:fvPortalPulse .65s ease-in-out infinite alternate}.fv-transition-label{position:absolute;margin-top:145px;color:#dceaff;font-size:11px;letter-spacing:3px;font-weight:800}@keyframes fvPortalPulse{to{transform:scale(1.35);filter:brightness(1.5)}}
+.fv-logo-secret{cursor:pointer}.fv-secret-message{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%) scale(.9);z-index:20000;display:none;width:min(340px,calc(100vw - 36px));padding:24px;border:1px solid rgba(192,167,255,.55);border-radius:20px;background:rgba(12,19,48,.96);color:#fff;text-align:center;box-shadow:0 0 50px rgba(146,115,255,.3)}.fv-secret-message.show{display:block;animation:fvRise .3s ease both}.fv-secret-message p{color:#cbd3ed;line-height:1.6}.fv-secret-message button{border:1px solid #a9eaff;border-radius:999px;padding:9px 18px;background:transparent;color:#a9eaff;cursor:pointer}
+@media(max-width:700px){.fv-badges{grid-template-columns:repeat(2,minmax(0,1fr))}.fv-quick-launcher{right:12px;bottom:14px}.fv-toast{right:12px;top:74px}.fv-weather-card,.fv-badge-card,.fv-wish-card{padding:17px}}
+@media(prefers-reduced-motion:reduce){.fv-toast,.fv-badge,.fv-page-transition,.fv-transition-orb{transition:none!important;animation:none!important}}
+</style>
+
+
+<!-- 3D GALAXY DEPTH + UNIVERSAL PHOTO LIGHTBOX + TEXT MOTION -->
+<style id="fv-3d-lightbox-styles">
+  /* A layered, glassy 3D galaxy atmosphere. Kept behind content and pointer-safe. */
+  .universe-background{position:fixed;inset:0;overflow:hidden;perspective:900px;transform-style:preserve-3d;background:radial-gradient(ellipse at 18% 18%,rgba(70,104,190,.25),transparent 38%),radial-gradient(ellipse at 82% 72%,rgba(121,70,190,.22),transparent 42%),radial-gradient(ellipse at 50% 50%,#0a1128 0%,#070b1b 72%)}
+  .universe-background:before{content:"";position:absolute;inset:-18%;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 25% 35%,rgba(90,210,255,.13),transparent 24%),radial-gradient(ellipse at 76% 62%,rgba(177,130,255,.15),transparent 28%),radial-gradient(ellipse at 52% 10%,rgba(255,255,255,.055),transparent 20%);filter:blur(24px);transform:translateZ(-100px) scale(1.2);animation:fvNebulaDrift 28s ease-in-out infinite alternate}
+  .universe-background:after{content:"";position:absolute;inset:-30%;pointer-events:none;z-index:2;opacity:.24;background-image:linear-gradient(rgba(126,177,255,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(126,177,255,.13) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse at center,#000 0%,transparent 72%);transform:perspective(700px) rotateX(68deg) translateY(20%);transform-origin:center bottom;animation:fvFloorDrift 34s linear infinite}
+  @keyframes fvNebulaDrift{0%{transform:translate3d(-2%,1%,-100px) scale(1.16) rotate(-3deg)}100%{transform:translate3d(2%,-2%,-70px) scale(1.27) rotate(4deg)}}
+  @keyframes fvFloorDrift{from{background-position:0 0}to{background-position:0 144px}}
+  /* Slow, readable movement for headings and labels; body copy remains calm. */
+  .farah-hero h1,.fv-feature-heading h2,.section-heading h2,.dashboard-heading h2,.inspiration-content h2,.uitm-special-content h2{background-image:linear-gradient(100deg,#f4f5ff 0%,#9ceaff 28%,#d4baff 52%,#f4f5ff 76%);background-size:220% auto;background-clip:text;-webkit-background-clip:text;animation:fvTextFlow 12s linear infinite}
+  @keyframes fvTextFlow{to{background-position:220% center}}
+  .section-overline,.fv-feature-kicker,.guideline-mini-label{animation:fvLabelFloat 5s ease-in-out infinite alternate}
+  @keyframes fvLabelFloat{from{transform:translateY(0);text-shadow:0 0 0 rgba(105,217,245,0)}to{transform:translateY(-2px);text-shadow:0 0 13px rgba(105,217,245,.35)}}
+  .hero-role #heroTyping{display:inline-block;min-width:11ch;animation:fvTypingGlow 3.8s ease-in-out infinite alternate}
+  @keyframes fvTypingGlow{from{text-shadow:0 0 0 rgba(183,156,255,0)}to{text-shadow:0 0 18px rgba(183,156,255,.55)}}
+  .dashboard-widget,.fv-glass-card,.fv-weather-card,.fv-badge-card,.fv-wish-card,.portal-card{transform-style:preserve-3d;backface-visibility:hidden}
+  .dashboard-widget:hover,.fv-star-card:hover,.portal-card:hover,.fv-weather-card:hover,.fv-badge-card:hover,.fv-wish-card:hover{box-shadow:0 22px 65px rgba(50,100,210,.18),0 0 28px rgba(145,130,255,.12);border-color:rgba(143,232,255,.42)}
+  /* Every ordinary content photo opens in the lightbox. Image Map stays clickable. */
+  img:not(#farahverseMapImage){cursor:zoom-in}
+  .fv-lightbox{position:fixed;inset:0;z-index:30000;display:grid;place-items:center;padding:24px;background:rgba(3,7,22,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}
+  .fv-lightbox.open{opacity:1;visibility:visible;pointer-events:auto}
+  .fv-lightbox-stage{position:relative;max-width:min(94vw,1400px);max-height:90vh;display:grid;place-items:center;transform:translateY(12px) scale(.97);transition:transform .25s ease}
+  .fv-lightbox.open .fv-lightbox-stage{transform:translateY(0) scale(1)}
+  .fv-lightbox-image{display:block;max-width:94vw;max-height:84vh;width:auto;height:auto;object-fit:contain;border-radius:16px;border:1px solid rgba(160,205,255,.55);box-shadow:0 0 0 1px rgba(180,150,255,.2),0 25px 100px rgba(0,0,0,.6),0 0 42px rgba(105,217,245,.2);cursor:default}
+  .fv-lightbox-caption{margin-top:12px;text-align:center;color:#dce7ff;font-size:13px;letter-spacing:.5px}
+  .fv-lightbox-close{position:fixed;top:18px;right:22px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(143,232,255,.6);background:rgba(15,27,60,.9);color:#fff;font-size:28px;line-height:1;cursor:pointer;box-shadow:0 0 22px rgba(105,217,245,.2)}
+  .fv-lightbox-close:focus-visible{outline:2px solid #8fe8ff;outline-offset:4px}
+  @media(max-width:700px){.fv-lightbox{padding:12px}.fv-lightbox-image{max-width:96vw;max-height:78vh;border-radius:10px}.fv-lightbox-close{top:10px;right:10px}}
+  @media(prefers-reduced-motion:reduce){.universe-background:before,.universe-background:after,.farah-hero h1,.fv-feature-heading h2,.section-heading h2,.dashboard-heading h2,.inspiration-content h2,.uitm-special-content h2,.section-overline,.fv-feature-kicker,.guideline-mini-label,.hero-role #heroTyping{animation:none!important}.fv-lightbox,.fv-lightbox-stage{transition:none!important}}
+</style>
+
+</head>
+<body>
+
+    <!-- PREMIUM LOADING SCREEN -->
+    <div id="fvLoadingScreen" role="status" aria-live="polite" aria-label="Loading FARAHVERSE">
+      <div class="fv-loader-inner">
+        <div class="fv-loader-orb" aria-hidden="true"><span>F✦</span></div>
+        <div class="fv-loader-title">FARAHVERSE</div>
+        <p class="fv-loader-status" id="fvLoaderStatus">INITIALIZING DIGITAL UNIVERSE...</p>
+        <div class="fv-loader-track" aria-hidden="true"><span></span></div>
+      </div>
+    </div>
+    <div class="fv-cursor-dot" id="fvCursorDot" aria-hidden="true"></div>
+    <div class="fv-cursor-ring" id="fvCursorRing" aria-hidden="true"></div>
+
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- BACKGROUND UNIVERSE -->
+
+    <div class="universe-background" aria-hidden="true">
+        <div class="universe-grid-bg"></div>
+        <div class="nebula nebula-one"></div>
+        <div class="nebula nebula-two"></div>
+        <div class="nebula nebula-three"></div>
+        <div class="star-field" id="starField"></div>
+        <canvas id="digitalMotionCanvas" class="digital-motion-canvas" aria-hidden="true"></canvas>
+    </div>
+
+
+    <!-- =================================
+         01. CINEMATIC ENTRY SCREEN
+    ================================== -->
+
+ 
+
+<!-- FARAHVERSE MINIMAL CINEMATIC INTRO -->
+
+<div class="entry-screen" id="entryScreen">
+
+    <div class="entry-content entry-clean">
+
+        <div class="entry-logo-icon">
+            F<span>✦</span>
+        </div>
+
+        <div class="entry-overline">
+            FARAHVERSE · PERSONAL DIGITAL WORLD
+        </div>
+
+        <h2 class="entry-title">
+            Welcome to
+            <br>
+            <span>Farahverse.</span>
+        </h2>
+
+        <p>
+            A little universe filled with stories,
+            memories, dreams and everything
+            that makes me, me.
+        </p>
+
+        <div class="entry-divider"></div>
+
+        <div class="entry-actions">
+
+            <button
+                type="button"
+                class="entry-button"
+                id="enterWithSound">
+
+                ENTER WITH MUSIC
+                <span>♫</span>
+
+            </button>
+
+            <button
+                type="button"
+                class="entry-quiet-button"
+                id="enterQuietly">
+
+                ENTER WITHOUT SOUND →
+
+            </button>
+
+        </div>
+
+        <div class="entry-audio-status" id="entryAudioStatus">
+            MUSIC IS OPTIONAL · CHOOSE YOUR EXPERIENCE
+        </div>
+
+    </div>
+
+    <div class="entry-bottom">
+        CREATED WITH ♡ BY NURFARAH ELEYANA
+    </div>
+
+</div>
+
+
+
+    <!-- =================================
+         02. NAVIGATION
+    ================================== -->
+    <header class="navbar farah-navbar" id="farahNavbar">
+
+        <a href="index.html" class="logo farah-logo">
+            FARAH<span>VERSE</span>
+            <small>PERSONAL DIGITAL WORLD</small>
+        </a>
+
+
+        <button
+            type="button"
+            class="farah-menu-toggle"
+            id="farahMenuToggle"
+            aria-label="Open menu"
+            aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <nav class="nav-links farah-nav-links" id="farahNavLinks" aria-label="Main navigation">
+
+            <a href="index.html" class="active" aria-current="page">Home</a>
+            <a href="biodata.html">Biodata</a>
+            <a href="experience.html">Experience</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="education.html">Education</a>
+            <a href="family.html">Family</a>
+            <a href="friends.html">Friends</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- SCROLL PROGRESS -->
+
+    <div class="farah-progress" id="farahProgress" aria-hidden="true"></div>
+
+    <!-- ACCESSIBILITY OPTIONS -->
+    <aside class="guideline-accessibility" aria-label="Accessibility options">
+        <button type="button" id="accessibilityToggle" class="guideline-access-toggle" aria-expanded="false" aria-controls="accessibilityOptions">
+            <span aria-hidden="true">Aa</span> Accessibility
+        </button>
+        <div class="guideline-access-options" id="accessibilityOptions" hidden>
+            <p>Display preferences</p>
+            <div class="guideline-access-row">
+                <button type="button" id="fontDecrease" aria-label="Decrease text size">A-</button>
+                <button type="button" id="fontReset" aria-label="Reset text size">A</button>
+                <button type="button" id="fontIncrease" aria-label="Increase text size">A+</button>
+            </div>
+            <button type="button" id="contrastToggle" class="guideline-access-wide" aria-pressed="false">High contrast</button>
+            <button type="button" id="motionToggle" class="guideline-access-wide" aria-pressed="false">Reduce motion</button>
+            <button type="button" id="textOnlyToggle" class="guideline-access-wide" aria-pressed="false">Text-focused mode</button>
+            <button type="button" id="accessibilityReset" class="guideline-access-wide">Reset options</button>
+        </div>
+    </aside>
+
+
+
+    <main class="farah-main" id="main-content" tabindex="-1">
+
+
+        <!-- =================================
+             03. HERO / DIGITAL DASHBOARD
+        ================================== -->
+
+        <section class="farah-hero" id="home">
+
+
+            <div class="hero-top-status">
+
+                <div class="system-status">
+                    <span class="status-light"></span>
+                    FARAHVERSE SYSTEM ONLINE <span class="fv-live-status">LIVE</span>
+                </div>
+
+                <div class="hero-date" id="heroDate">
+                    LOADING DATE...
+                </div>
+
+            </div>
+
+
+
+            <div class="hero-layout">
+
+
+                <!-- LEFT CONTENT -->
+
+                <div class="hero-content">
+
+
+                    <div class="hero-greeting" id="heroGreeting">
+                        HELLO THERE, WELCOME TO MY WORLD
+                    </div>
+
+
+                    <div class="hero-name-label">
+                        THIS IS
+                    </div>
+
+
+                    <h1>
+                        Nurfarah<br>
+                        <span>Eleyana.</span>
+                    </h1>
+
+
+                    <div class="hero-role">
+
+                        <span class="role-prefix">I AM</span>
+
+                        <span id="heroTyping">
+                            A CREATIVE EXPLORER
+                        </span>
+
+                        <span class="role-cursor">_</span>
+
+                    </div>
+
+
+                    <p class="hero-description">
+                        An ambivert with big dreams,
+                        a curious mind and a heart full of stories.
+
+                        Welcome to my little digital universe,
+                        where every page reveals a different
+                        chapter of my life.
+                    </p>
+
+
+                    <div class="hero-personal-motto">
+                        <span>✦</span>
+                        KEEP GROWING. KEEP GOING.
+                    </div>
+
+
+
+                    <!-- HERO BUTTONS -->
+
+                    <div class="hero-actions">
+
+                        <a href="#explore" class="hero-primary-btn">
+
+                            EXPLORE MY WORLD
+
+                            <span>↗</span>
+
+                        </a>
+
+
+                        <a href="biodata.html" class="hero-outline-btn">
+
+                            GET TO KNOW ME
+
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- SOCIAL MINI LINKS -->
+
+                    <div class="hero-social-row">
+
+                        <span>FIND ME:</span>
+
+                        <a href="https://www.instagram.com/nrfrhelynaa/"
+                           target="_blank"
+                           rel="noopener">
+
+                            INSTAGRAM ↗
+
+                        </a>
+
+                        <a href="https://www.tiktok.com/@frhelynaa"
+                           target="_blank"
+                           rel="noopener">
+
+                            TIKTOK ↗
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- RIGHT COLLAGE -->
+
+                <div class="hero-visual">
+
+
+                    <div class="hero-image-glow"></div>
+
+
+                    <!-- MAIN PHOTO -->
+
+                    <div class="hero-main-photo home-photo">
+
+                        <img
+                            src="images/profile.jpg"
+                            alt="Nurfarah Eleyana"
+                            class="home-image"
+                        >
+
+                        <div class="home-image-placeholder">
+                            <span>✦</span>
+                            <p>FARAH'S PORTRAIT</p>
+                        </div>
+
+                        <div class="hero-image-overlay">
+                            THE GIRL BEHIND FARAHVERSE
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FRIEND PHOTO -->
+
+                    <div class="hero-float-photo hero-friend-photo home-photo">
+
+                        <img
+                            src="images/friends/hero.jpg"
+                            alt="Farah and her best friend"
+                            class="home-image"
+                        >
+
+                        <div class="home-image-placeholder">
+                            <span>♡</span>
+                            <p>FRIENDSHIP</p>
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FAMILY PHOTO -->
+
+                    <div class="hero-float-photo hero-family-photo home-photo">
+
+                        <img
+                            src="images/family/family-main.jpg"
+                            alt="Farah's family"
+                            class="home-image"
+                        >
+
+                        <div class="home-image-placeholder">
+                            <span>🏡</span>
+                            <p>MY FAMILY</p>
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- UNIVERSITY PHOTO -->
+
+                    <div class="hero-float-photo hero-uni-photo home-photo">
+
+                        <img
+                            src="images/gallery/university-1.jpg"
+                            alt="Farah's university memories"
+                            class="home-image"
+                        >
+
+                        <div class="home-image-placeholder">
+                            <span>🎓</span>
+                            <p>UNIVERSITY</p>
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- CLOCK WIDGET -->
+
+                    <div class="floating-clock-widget">
+
+                        <span>LOCAL TIME · MALAYSIA</span>
+
+                        <strong id="heroClock">
+                            00:00:00
+                        </strong>
+
+                        <p id="clockGreeting">
+                            YOUR TIME, YOUR MOMENT
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- FLOATING DECORATIONS -->
+
+                    <div class="hero-floating-label label-top">
+                        ✦ DREAM BIG
+                    </div>
+
+                    <div class="hero-floating-label label-bottom">
+                        A WORLD OF MY OWN ♡
+                    </div>
+
+
+                    <div class="hero-star star-a">✦</div>
+                    <div class="hero-star star-b">✧</div>
+                    <div class="hero-star star-c">✦</div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- BOTTOM SCROLL -->
+
+            <a href="#dashboard" class="hero-scroll">
+
+                <span>DISCOVER MY UNIVERSE</span>
+
+                <div>↓</div>
+
+            </a>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             04. GLOBAL SEARCH AND SITE MAP
+        ================================== -->
+        <section class="guideline-tools-section" id="site-tools" aria-labelledby="site-tools-title">
+            <div class="section-overline">QUICK ACCESS / FIND YOUR DESTINATION</div>
+            <div class="guideline-tools-grid">
+                <div class="guideline-search-card">
+                    <span class="guideline-mini-label">FARAHVERSE SEARCH</span>
+                    <h2 id="site-tools-title">Where would you like to go?</h2>
+                    <p>Search the nine pages by topic, keyword or page name.</p>
+                    <form id="siteSearchForm" class="guideline-search-form" role="search">
+                        <label class="visually-hidden" for="siteSearchInput">Search FARAHVERSE pages</label>
+                        <input type="search" id="siteSearchInput" placeholder="Try education, Puyie, sports, family..." autocomplete="off">
+                        <button type="submit">SEARCH</button>
+                    </form>
+                    <div id="siteSearchResults" class="guideline-search-results" aria-live="polite">
+                        <p>Search results will appear here.</p>
+                    </div>
+                </div>
+                <div class="guideline-sitemap-card" id="site-map">
+                    <span class="guideline-mini-label">TEXT SITE MAP</span>
+                    <h2>Explore All Pages</h2>
+                    <p>Use this directory if you prefer a direct text link.</p>
+                    <ul class="guideline-sitemap-list">
+                        <li><a href="index.html">Home <span>Personal digital world</span></a></li>
+                        <li><a href="biodata.html">Biodata <span>Personal profile and interests</span></a></li>
+                        <li><a href="experience.html">Experience <span>Work and real-life experiences</span></a></li>
+                        <li><a href="achievements.html">Achievements <span>Awards and milestones</span></a></li>
+                        <li><a href="education.html">Education <span>Learning journey and subjects</span></a></li>
+                        <li><a href="family.html">Family <span>People closest to my heart</span></a></li>
+                        <li><a href="friends.html">Friends <span>Friendship stories</span></a></li>
+                        <li><a href="gallery.html">Gallery <span>Portraits and memories</span></a></li>
+                        <li><a href="contact.html">Contact <span>Ways to connect</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================
+             01. LIVE DIGITAL DASHBOARD
+        ================================== -->
+
+        <section class="dashboard-section" id="dashboard">
+
+
+            <div class="section-overline">
+                01 / YOUR LITTLE DIGITAL SPACE
+            </div>
+
+
+            <div class="dashboard-heading">
+
+                <div>
+
+                    <h2>
+                        Your Window into<br>
+                        <span>My Universe.</span>
+                    </h2>
+
+                    <p>
+                        A little overview of who I am
+                        and what makes my world special.
+                    </p>
+
+                </div>
+
+
+                <div class="dashboard-date-badge">
+
+                    <span>DATE & TIME</span>
+
+                    <strong id="dashboardDate">
+                        LOADING...
+                    </strong>
+
+                    <p id="dashboardTime">
+                        00:00:00
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="dashboard-grid">
+
+
+                <!-- PROFILE WIDGET -->
+
+                <article class="dashboard-widget profile-widget">
+
+                    <div class="widget-top">
+                        <span>01 / PROFILE</span>
+                        <span class="widget-dot"></span>
+                    </div>
+
+                    <div class="profile-widget-icon">
+                        F
+                    </div>
+
+                    <h3>Nurfarah Eleyana</h3>
+
+                    <p>
+                        Information Management Student
+                    </p>
+
+                    <div class="widget-bottom">
+                        <span>UiTM SEGAMAT</span>
+                        <span>SI110</span>
+                    </div>
+                    <small class="guideline-cgpa-note">CURRENT CGPA: ABOVE 3.50</small>
+
+                </article>
+
+
+
+                <!-- STUDY WIDGET -->
+
+                <article class="dashboard-widget study-widget">
+
+                    <div class="widget-top">
+                        <span>02 / CURRENT CHAPTER</span>
+                        <span>🎓</span>
+                    </div>
+
+                    <div class="study-icon">📚</div>
+
+                    <h3>Diploma Journey</h3>
+
+                    <p>
+                        Diploma in Information Management
+                    </p>
+
+                    <div class="study-progress">
+                        <div class="study-progress-track">
+                            <span></span>
+                        </div>
+                        <small>SEMESTER 5 · FINAL STAGE</small>
+                    </div>
+
+                </article>
+
+
+
+                <!-- MOOD / QUOTE WIDGET -->
+
+                <article class="dashboard-widget quote-widget">
+
+                    <div class="widget-top">
+                        <span>03 / DAILY REMINDER</span>
+                        <span>✧</span>
+                    </div>
+
+                    <div class="quote-symbol">“</div>
+
+                    <h3 id="dailyQuote">
+                        Small steps are still progress.
+                    </h3>
+
+                    <p>
+                        A little reminder for today.
+                    </p>
+
+                    <button type="button" id="newQuote">
+                        NEW INSPIRATION ↻
+                    </button>
+
+                </article>
+
+
+
+                <!-- INTEREST WIDGET -->
+
+                <article class="dashboard-widget interest-widget">
+
+                    <div class="widget-top">
+                        <span>04 / MY INTERESTS</span>
+                        <span>♡</span>
+                    </div>
+
+                    <h3>Things I Enjoy</h3>
+
+                    <div class="interest-chips">
+
+                        <span>📸 Photography</span>
+                        <span>♡ Family</span>
+                        <span>∞ Friends</span>
+                        <span>✈ Travel</span>
+                        <span>🍳 Cooking</span>
+
+                    </div>
+
+                    <a href="biodata.html">
+                        DISCOVER MORE ↗
+                    </a>
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+        <!-- =============================================
+             NEW 01. UNLOCK A STAR - PERSONAL FACTS
+        ============================================== -->
+        <section class="fv-feature-section" id="unlock-a-star" aria-labelledby="star-feature-title">
+            <div class="fv-feature-heading">
+                <div class="fv-feature-kicker">✦ 01 / A LITTLE DISCOVERY</div>
+                <h2 id="star-feature-title">Unlock a <span>Star.</span></h2>
+                <p>Every star holds a little detail about me. Choose one and discover another part of the person behind FARAHVERSE.</p>
+            </div>
+            <div class="fv-interactive-grid">
+                <article class="fv-glass-card fv-star-card">
+                    <div><div class="fv-star-symbol" aria-hidden="true">✦</div><h3>My Personality</h3><p>A small clue about the way I see and experience the world.</p></div>
+                    <button class="fv-action-button" type="button" data-star="personality">UNLOCK STAR ↗</button>
+                </article>
+                <article class="fv-glass-card fv-star-card">
+                    <div><div class="fv-star-symbol" aria-hidden="true">✧</div><h3>Things I Love</h3><p>Some of the little interests that make my days meaningful.</p></div>
+                    <button class="fv-action-button" type="button" data-star="interests">UNLOCK STAR ↗</button>
+                </article>
+                <article class="fv-glass-card fv-star-card">
+                    <div><div class="fv-star-symbol" aria-hidden="true">⋆</div><h3>My Study Chapter</h3><p>A glimpse into my current learning journey.</p></div>
+                    <button class="fv-action-button" type="button" data-star="study">UNLOCK STAR ↗</button>
+                </article>
+            </div>
+            <div class="fv-glass-card fv-star-detail" id="starDetail" role="status" aria-live="polite" aria-atomic="true">
+                <h3 id="starDetailTitle">A little discovery</h3>
+                <p id="starDetailText">Choose a star above to reveal a fact.</p>
+            </div>
+        </section>
+
+        <div class="fv-section-divider" aria-hidden="true"></div>
+
+        <!-- =============================================
+             NEW 02. LIFE IN CONSTELLATIONS - TIMELINE
+        ============================================== -->
+        <section class="fv-feature-section" id="life-constellations" aria-labelledby="timeline-feature-title">
+            <div class="fv-feature-heading">
+                <div class="fv-feature-kicker">✧ 02 / CHAPTERS THAT SHAPED ME</div>
+                <h2 id="timeline-feature-title">My Life in <span>Constellations.</span></h2>
+                <p>Different chapters, different lessons. This timeline gives a simple overview of my journey so far.</p>
+            </div>
+            <div class="fv-glass-card fv-timeline">
+                <ol class="fv-timeline-list">
+                    <li class="fv-timeline-item"><span class="fv-timeline-dot" aria-hidden="true"></span><small>CHAPTER 01 · EARLY YEARS</small><h3>Childhood & First Memories</h3><p>My story began with the people, places and little experiences that became the foundation of who I am.</p></li>
+                    <li class="fv-timeline-item"><span class="fv-timeline-dot" aria-hidden="true"></span><small>CHAPTER 02 · SCHOOL LIFE</small><h3>Learning, Friendship & Activities</h3><p>School gave me opportunities to learn, take part in activities, build friendships and discover interests.</p></li>
+                    <li class="fv-timeline-item"><span class="fv-timeline-dot" aria-hidden="true"></span><small>CHAPTER 03 · 28 SEPTEMBER 2024</small><h3>My UiTM Chapter</h3><p>I began my Diploma in Information Management (SI110) journey at UiTM Segamat.</p></li>
+                    <li class="fv-timeline-item"><span class="fv-timeline-dot" aria-hidden="true"></span><small>CHAPTER 04 · SEMESTER 5</small><h3>Growing Through Experience</h3><p>My final diploma stage brings together learning, projects, practical experiences and memories.</p></li>
+                    <li class="fv-timeline-item"><span class="fv-timeline-dot" aria-hidden="true"></span><small>CHAPTER 05 · THE JOURNEY CONTINUES</small><h3>Dreams & New Possibilities</h3><p>There is still so much to explore. I hope to keep learning, growing and creating meaningful memories.</p></li>
+                </ol>
+            </div>
+            <p style="text-align:center;color:#aeb9dd;font-size:12px;margin:18px 0 0">Explore the <a href="education.html">Education</a>, <a href="experience.html">Experience</a> and <a href="achievements.html">Achievements</a> pages for more details.</p>
+        </section>
+
+        <div class="fv-section-divider" aria-hidden="true"></div>
+
+        <!-- =============================================
+             NEW 03. HOW WELL DO YOU KNOW FARAH? - QUIZ
+        ============================================== -->
+        <section class="fv-feature-section" id="farah-mini-quiz" aria-labelledby="quiz-feature-title">
+            <div class="fv-feature-heading">
+                <div class="fv-feature-kicker">♡ 03 / A QUICK LITTLE CHALLENGE</div>
+                <h2 id="quiz-feature-title">How Well Do You <span>Know Farah?</span></h2>
+                <p>Try this five-question mini quiz based on the information shared across my personal website.</p>
+            </div>
+            <div class="fv-glass-card fv-quiz-wrap">
+                <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;color:#bfc9e7;font-size:12px"><span id="quizQuestionCount">QUESTION 1 OF 5</span><span id="quizScoreLabel">SCORE: 0</span></div>
+                <div class="fv-quiz-progress" aria-hidden="true"><span id="quizProgressBar"></span></div>
+                <div id="quizPlayArea">
+                    <h3 class="fv-quiz-question" id="quizQuestion">Which programme is Farah studying?</h3>
+                    <div class="fv-quiz-options" id="quizOptions"></div>
+                    <p class="fv-quiz-feedback" id="quizFeedback" aria-live="polite">Choose one answer to continue.</p>
+                    <div class="fv-quiz-controls"><span style="font-size:11px;color:#aeb9dd">One answer per question</span><button class="fv-action-button" type="button" id="quizNextButton" disabled>NEXT QUESTION →</button></div>
+                </div>
+                <div class="fv-quiz-result" id="quizResult" aria-live="polite">
+                    <div class="fv-star-symbol" aria-hidden="true">✦</div><h3>Quiz completed!</h3><strong id="quizFinalScore">0 / 5</strong><p id="quizResultMessage" style="color:#cbd3ed;line-height:1.7">Thank you for exploring FARAHVERSE.</p><button class="fv-action-button" type="button" id="quizRestartButton">TRY AGAIN ↻</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="fv-section-divider" aria-hidden="true"></div>
+
+        <!-- =============================================
+             NEW 04. MESSAGE TO MY FUTURE SELF - CAPSULE
+        ============================================== -->
+        <section class="fv-feature-section" id="future-capsule" aria-labelledby="capsule-feature-title">
+            <div class="fv-feature-heading">
+                <div class="fv-feature-kicker">☾ 04 / A NOTE THROUGH TIME</div>
+                <h2 id="capsule-feature-title">Message to My <span>Future Self.</span></h2>
+                <p>A small reminder to the person I am becoming. Open this little time capsule to read it.</p>
+            </div>
+            <div class="fv-glass-card fv-capsule-wrap">
+                <div class="fv-capsule-icon" aria-hidden="true">✉</div>
+                <h3 style="color:#fff;margin:12px 0 8px">Dear Future Me,</h3>
+                <p style="color:#c6cde6;line-height:1.7;margin:0 auto 22px;max-width:550px">Wherever life takes me next, I hope I never stop appreciating how far I have come.</p>
+                <button class="fv-action-button" type="button" id="capsuleToggle" aria-expanded="false" aria-controls="capsuleLetter">OPEN MY TIME CAPSULE ✧</button>
+                <div class="fv-capsule-letter" id="capsuleLetter" aria-hidden="true">
+                    <div class="fv-capsule-letter-inner">
+                        <p><strong>Dear Future Me,</strong></p>
+                        <p>I hope you are still curious, brave enough to try new things and grateful for the people who have supported you. Remember the small steps, the lessons, the laughter and the memories that helped you grow.</p>
+                        <p>Do not measure your journey only by how quickly you reach your goals. Be proud of the effort you make, stay kind to yourself and keep making room for the things you love.</p>
+                        <p>Keep growing. Keep going. With love, <strong>Farah ♡</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="fv-section-divider" aria-hidden="true"></div>
+
+        <!-- =================================
+             02. ACADEMIC SNAPSHOT AND HTML ELEMENTS
+        ================================== -->
+        <section class="guideline-learning-section" id="digital-learning" aria-labelledby="academic-snapshot-title">
+            <div class="section-overline">02 / MY ACADEMIC PROFILE & DIGITAL LEARNING</div>
+            <div class="guideline-learning-grid">
+                <article class="guideline-learning-card">
+                    <span class="guideline-mini-label">ACADEMIC SNAPSHOT</span>
+                    <h2 id="academic-snapshot-title">A Little About My Studies.</h2>
+                    <p>This table gives a concise overview of my current academic journey.</p>
+                    <div class="guideline-table-wrap">
+                        <table class="guideline-academic-table">
+                            <caption>Nurfarah Eleyana - Academic Profile (2026)</caption>
+                            <thead>
+                                <tr><th scope="col">Information</th><th scope="col">Details</th><th scope="col">Reference</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">Programme</th><td>Diploma in Information Management</td><td>SI110</td></tr>
+                                <tr><th scope="row">Institution</th><td>Universiti Teknologi MARA</td><td>UiTM Segamat</td></tr>
+                                <tr><th scope="row">Study commencement</th><td><time datetime="2024-09-28">28 September 2024</time></td><td>Intake date</td></tr>
+                                <tr><th scope="row">Current stage</th><td>Semester 5</td><td>Final semester</td></tr>
+                                <tr><th scope="row">Academic standing</th><td>CGPA above 3.50</td><td>As shared for this profile</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="guideline-table-note">For the full education history and course outline, visit the <a href="education.html">Education page</a>.</p>
+                </article>
+
+                <article class="guideline-learning-card guideline-format-card">
+                    <span class="guideline-mini-label">HTML TEXT FORMATTING</span>
+                    <h2>Learning the Language of the Web.</h2>
+                    <p><b>HTML</b> builds structure, while <i>CSS</i> shapes presentation. <strong>Semantic tags</strong> and <em>clear writing</em> make content easier to understand. <u>Practice and consistency</u> help me improve.</p>
+                    <p>My current chapter is the <strong>5<sup>th</sup> semester</strong>. A familiar example of subscript is H<sub>2</sub>O.</p>
+                    <p>I study at <abbr title="Universiti Teknologi MARA">UiTM</abbr>, a university that is part of my academic journey.</p>
+                    <p class="guideline-colour-example">A little colour helps important information stand out.</p>
+                    <div class="guideline-pre-block">
+                        <span>PRE-FORMATTED HTML EXAMPLE</span>
+                        <pre><code>&lt;h1&gt;Welcome to Farahverse&lt;/h1&gt;
+&lt;p&gt;A universe of stories and memories.&lt;/p&gt;</code></pre>
+                    </div>
+                </article>
+            </div>
+
+            <div class="guideline-lists-grid">
+                <article class="guideline-list-card">
+                    <span class="guideline-mini-label">ORDERED LIST</span>
+                    <h3>How to Explore My Website</h3>
+                    <ol class="guideline-ordered-list">
+                        <li>Start with my personal profile.</li>
+                        <li>Explore education, experiences and achievements.</li>
+                        <li>Visit the family, friends and gallery pages.</li>
+                        <li>Use the Contact page to say hello.</li>
+                    </ol>
+                </article>
+                <article class="guideline-list-card">
+                    <span class="guideline-mini-label">UNORDERED LIST</span>
+                    <h3>Things I Enjoy</h3>
+                    <ul class="guideline-custom-list">
+                        <li>Photography and capturing little moments</li>
+                        <li>Spending time with family and friends</li>
+                        <li>Travelling and discovering new places</li>
+                        <li>Cooking and trying new ideas</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- =================================
+             03. EXPLORE MY UNIVERSE
+        ================================== -->
+
+        <section class="explore-section" id="explore">
+
+
+            <div class="section-overline">
+                03 / SELECT YOUR DESTINATION
+            </div>
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Explore My<br>
+                    <span>Digital Universe.</span>
+                </h2>
+
+                <p>
+                    Eight destinations beyond Home.
+                    Nine pages in total.
+                    One story — mine.
+                </p>
+
+            </div>
+
+
+
+            <div class="universe-portal-grid">
+
+
+                <a href="biodata.html"
+                   class="portal-card portal-large">
+
+                    <div class="portal-number">01</div>
+
+                    <div class="portal-icon">✦</div>
+
+                    <div class="portal-content">
+
+                        <span>GET TO KNOW ME</span>
+
+                        <h3>About Me</h3>
+
+                        <p>
+                            Discover my personality,
+                            interests and little things about me.
+                        </p>
+
+                        <div class="portal-link">
+                            ENTER SPACE ↗
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="experience.html" class="portal-card">
+
+                    <div class="portal-number">02</div>
+
+                    <div class="portal-icon">◈</div>
+
+                    <div class="portal-content">
+
+                        <span>REAL-LIFE CHAPTERS</span>
+
+                        <h3>Experience</h3>
+
+                        <p>
+                            My working journey
+                            and life experiences.
+                        </p>
+
+                        <div class="portal-link">
+                            ENTER SPACE ↗
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="achievements.html" class="portal-card">
+
+                    <div class="portal-number">03</div>
+
+                    <div class="portal-icon">✧</div>
+
+                    <div class="portal-content">
+
+                        <span>PROUD MOMENTS</span>
+
+                        <h3>Achievements</h3>
+
+                        <p>
+                            Every milestone
+                            worth celebrating.
+                        </p>
+
+                        <div class="portal-link">
+                            ENTER SPACE ↗
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="education.html" class="portal-card">
+
+                    <div class="portal-number">04</div>
+
+                    <div class="portal-icon">⌘</div>
+
+                    <div class="portal-content">
+
+                        <span>MY LEARNING WORLD</span>
+
+                        <h3>Education</h3>
+
+                        <p>
+                            My journey from preschool
+                            to university.
+                        </p>
+
+                        <div class="portal-link">
+                            ENTER SPACE ↗
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="family.html" class="portal-card">
+
+                    <div class="portal-number">05</div>
+
+                    <div class="portal-icon">♡</div>
+
+                    <div class="portal-content">
+
+                        <span>MY FOREVER HOME</span>
+
+                        <h3>Family</h3>
+
+                        <p>
+                            The people who make
+                            my world complete.
+                        </p>
+
+                        <div class="portal-link">
+                            ENTER SPACE ↗
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="friends.html" class="portal-card">
+
+                    <div class="portal-number">06</div>
+
+                    <div class="portal-icon">∞</div>
+
+                    <div class="portal-content">
+
+                        <span>SPECIAL CONNECTIONS</span>
+
+                        <h3>Friends</h3>
+
+                        <p>
+                            A friendship story
+                            close to my heart.
+                        </p>
+
+                        <div class="portal-link">
+                            ENTER SPACE ↗
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="gallery.html" class="portal-card">
+
+                    <div class="portal-number">07</div>
+
+                    <div class="portal-icon">▧</div>
+
+                    <div class="portal-content">
+
+                        <span>VISUAL MEMORIES</span>
+
+                        <h3>Gallery</h3>
+
+                        <p>
+                            Little moments captured
+                            throughout my life.
+                        </p>
+
+                        <div class="portal-link">
+                            ENTER SPACE ↗
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="contact.html" class="portal-card">
+
+                    <div class="portal-number">08</div>
+
+                    <div class="portal-icon">✉</div>
+
+                    <div class="portal-content">
+
+                        <span>LET'S CONNECT</span>
+
+                        <h3>Contact</h3>
+
+                        <p>
+                            Let's say hello
+                            and stay connected.
+                        </p>
+
+                        <div class="portal-link">
+                            ENTER SPACE ↗
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             04. EXTERNAL DIGITAL CONNECTION / HTML IMAGE MAP
+        ================================== -->
+        <section class="guideline-map-section" id="journey-map-section" aria-labelledby="journey-map-title">
+            <div class="section-overline">04 / MY DIGITAL CONNECTIONS / INTERACTIVE IMAGE MAP</div>
+            <div class="section-heading">
+                <h2 id="journey-map-title">Connect With My <span>Digital World.</span></h2>
+                <p>Explore my digital workspace. Select an object to visit a platform, discover my university, or view my creative memories.</p>
+            </div>
+            <div class="guideline-map-frame digital-workspace-map">
+                <img src="images/farahverse-digital-workspace.png"
+                     alt="Futuristic purple and blue digital creator workspace. Clickable objects connect to Instagram, UiTM, YouTube, TikTok, email, Spotify and Gallery."
+                     width="1625" height="968"
+                     usemap="#farahverseMap" id="farahverseMapImage"
+                     decoding="async">
+                
+<map name="farahverseMap" id="farahverseMap">
+    <!-- Gallery: camera and Gallery label -->
+    <area shape="poly" data-base-coords="8,510,285,510,355,690,360,765,145,765,8,735"
+          href="gallery.html" alt="Open Farahverse Gallery" title="Gallery">
+
+    <!-- Instagram: smartphone -->
+    <area shape="poly" data-base-coords="320,370,470,370,520,535,520,635,360,635,320,555"
+          href="https://www.instagram.com/nrfrhelynaa/" target="_blank" rel="noopener noreferrer"
+          alt="Visit Farah's Instagram" title="Instagram">
+
+    <!-- UiTM: laptop screen and laptop body -->
+    <area shape="poly" data-base-coords="490,300,950,300,955,555,1115,665,1100,720,520,720,480,560"
+          href="https://www.uitm.edu.my/" target="_blank" rel="noopener noreferrer"
+          alt="Visit the official UiTM website" title="Official UiTM Website">
+
+    <!-- YouTube: media screen -->
+    <area shape="poly" data-base-coords="955,325,1268,325,1268,555,960,555"
+          href="https://www.youtube.com/results?search_query=UiTM+Di+Hatiku+lagu+rasmi"
+          target="_blank" rel="noopener noreferrer"
+          alt="Find the UiTM Di Hatiku song on YouTube" title="UiTM Di Hatiku on YouTube">
+
+    <!-- Email: envelope -->
+    <area shape="poly" data-base-coords="1168,520,1375,520,1392,555,1392,710,1180,710,1162,670"
+          href="mailto:faraheleyana18@gmail.com?subject=Hello%20Farah"
+          alt="Send an email to Farah" title="Email Farah">
+
+    <!-- TikTok: headphones -->
+    <area shape="poly" data-base-coords="1380,320,1620,320,1620,675,1390,675,1370,600"
+          href="https://www.tiktok.com/@frhelynaa" target="_blank" rel="noopener noreferrer"
+          alt="Visit Farah's TikTok" title="TikTok">
+
+    <!-- Spotify: music player -->
+    <area shape="poly" data-base-coords="625,735,1000,735,1000,890,650,890,625,845"
+          href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer"
+          alt="Open Spotify" title="Spotify">
+</map>
+
+            </div>
+            <p class="guideline-map-feedback" id="mapFeedback" aria-live="polite">Tip: hover or focus on an object to preview its destination, then click to open it.</p>
+              
+<div class="guideline-map-text-links">
+
+    <a href="gallery.html">Gallery</a>
+
+    <a href="https://www.instagram.com/nrfrhelynaa/"
+       target="_blank">Instagram ↗</a>
+
+    <a href="https://www.uitm.edu.my/"
+       target="_blank">UiTM ↗</a>
+
+    <a href="https://www.youtube.com/results?search_query=UiTM+Di+Hatiku+lagu+rasmi"
+       target="_blank">UiTM Di Hatiku ↗</a>
+
+    <a href="mailto:faraheleyana18@gmail.com">
+       Email Farah</a>
+
+    <a href="https://www.tiktok.com/@frhelynaa"
+       target="_blank">TikTok ↗</a>
+
+    <a href="https://open.spotify.com/"
+       target="_blank">Spotify ↗</a>
+
+</div>
+     </section>
+
+        <!-- =================================
+             05. MEMORY TRANSMISSION
+        ================================== -->
+
+        <section class="memory-transmission-section" id="memory-archive" aria-label="Farah personal memory archive">
+
+
+            <div class="section-overline">
+                05 / PERSONAL MEMORY ARCHIVE
+            </div>
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Moments Worth<br>
+                    <span>Keeping Forever.</span>
+                </h2>
+
+                <p>
+                    A few glimpses into the memories
+                    that make my story special.
+                </p>
+
+            </div>
+
+
+
+            <div class="memory-feature-grid">
+
+
+                <a href="gallery.html" class="memory-feature memory-feature-one home-reveal">
+
+                    <div class="home-photo">
+
+                        <img
+                            src="images/gallery/solo-1.jpg"
+                            alt="Farah's personal memories"
+                            class="home-image"
+                        >
+
+                        <div class="home-image-placeholder">
+                            <span>✦</span>
+                            <p>MY LITTLE MOMENTS</p>
+                        </div>
+
+                    </div>
+
+                    <div class="memory-feature-caption">
+                        <span>01 / SELF</span>
+                        <h3>Little Pieces of Me</h3>
+                    </div>
+
+                </a>
+
+
+
+                <a href="family.html" class="memory-feature memory-feature-two home-reveal">
+
+                    <div class="home-photo">
+
+                        <img
+                            src="images/family/family-main.jpg"
+                            alt="Farah's family"
+                            class="home-image"
+                        >
+
+                        <div class="home-image-placeholder">
+                            <span>♡</span>
+                            <p>FAMILY</p>
+                        </div>
+
+                    </div>
+
+                    <div class="memory-feature-caption">
+                        <span>02 / HOME</span>
+                        <h3>My Forever People</h3>
+                    </div>
+
+                </a>
+
+
+
+                <a href="friends.html" class="memory-feature memory-feature-three home-reveal">
+
+                    <div class="home-photo">
+
+                        <img
+                            src="images/friends/hero.jpg"
+                            alt="Farah and Puyie"
+                            class="home-image"
+                        >
+
+                        <div class="home-image-placeholder">
+                            <span>∞</span>
+                            <p>FRIENDSHIP</p>
+                        </div>
+
+                    </div>
+
+                    <div class="memory-feature-caption">
+                        <span>03 / FRIENDSHIP</span>
+                        <h3>Growing Together</h3>
+                    </div>
+
+                </a>
+
+
+
+                <a href="education.html" class="memory-feature memory-feature-four home-reveal">
+
+                    <div class="home-photo">
+
+                        <img
+                            src="images/gallery/university-1.jpg"
+                            alt="Farah's university journey"
+                            class="home-image"
+                        >
+
+                        <div class="home-image-placeholder">
+                            <span>🎓</span>
+                            <p>UNIVERSITY</p>
+                        </div>
+
+                    </div>
+
+                    <div class="memory-feature-caption">
+                        <span>04 / GROWTH</span>
+                        <h3>My Diploma Journey</h3>
+                    </div>
+
+                </a>
+
+
+            </div>
+
+
+
+            <div class="archive-link">
+
+                <a href="gallery.html">
+                    OPEN FULL MEMORY ARCHIVE ↗
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             06. EXTERNAL RESOURCE AND IMAGE THUMBNAIL
+        ================================== -->
+        <section class="guideline-external-section" id="external-resources" aria-labelledby="external-resource-title">
+            <div class="section-overline">06 / USEFUL EXTERNAL CONNECTION</div>
+            <div class="guideline-external-card">
+                <a href="https://uitm.edu.my/index.php/en/" target="_blank" rel="noopener noreferrer" class="guideline-thumbnail-link" aria-label="Visit the official Universiti Teknologi MARA website">
+                    <img src="images/gallery/university-1.jpg" alt="A photograph representing Farah's university journey">
+                    <span>OPEN OFFICIAL SITE ↗</span>
+                </a>
+                <div>
+                    <span class="guideline-mini-label">EXTERNAL LINK + CLICKABLE THUMBNAIL</span>
+                    <h2 id="external-resource-title">Universiti Teknologi MARA</h2>
+                    <p>This image thumbnail links to the official UiTM website. It is an example of an external link paired with an image.</p>
+                    <a href="https://uitm.edu.my/index.php/en/" target="_blank" rel="noopener noreferrer" class="guideline-text-link">Visit UiTM official website ↗</a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- NEW: LIVE WEATHER WIDGET (SEGAMAT) -->
+        <section class="fv-extra-section" id="fv-weather-section" aria-labelledby="fv-weather-title">
+          <div class="fv-extra-heading"><span>LIVE CAMPUS WEATHER</span><h2 id="fv-weather-title">A Little Weather Update.</h2><p>Current weather around my university town, Segamat.</p></div>
+          <div class="fv-weather-card"><div class="fv-weather-row"><div><div class="fv-weather-meta"><span>📍 SEGAMAT, JOHOR</span><span id="fvWeatherUpdated">Checking live conditions...</span></div><div class="fv-weather-temp" id="fvWeatherTemp">--°C</div><strong id="fvWeatherDescription">Connecting to weather service...</strong></div><div class="fv-weather-icon" id="fvWeatherIcon" aria-hidden="true">☁</div></div><div class="fv-weather-meta" style="margin-top:14px"><span id="fvWeatherHumidity">Humidity: --</span><span id="fvWeatherWind">Wind: --</span></div><p class="fv-weather-note" id="fvWeatherNote">Weather data is provided by Open-Meteo. If the service is unavailable, try refreshing later.</p></div>
+        </section>
+
+        <!-- NEW: VISITOR DISCOVERY BADGES -->
+        <section class="fv-extra-section" id="fv-visitor-badges" aria-labelledby="fv-badges-title">
+          <div class="fv-extra-heading"><span>YOUR FARAHVERSE JOURNEY</span><h2 id="fv-badges-title">Unlock Little Discoveries.</h2><p>Explore the website and collect visitor badges along the way. Your progress is saved on this browser only.</p></div>
+          <div class="fv-badge-card"><div class="fv-badges" id="fvBadgeGrid">
+            <div class="fv-badge" data-badge="explorer"><b>✦</b><strong>First Explorer</strong><small>Visit a page</small></div>
+            <div class="fv-badge" data-badge="star"><b>★</b><strong>Star Finder</strong><small>Unlock a star</small></div>
+            <div class="fv-badge" data-badge="quiz"><b>✧</b><strong>Quiz Player</strong><small>Complete the quiz</small></div>
+            <div class="fv-badge" data-badge="capsule"><b>✉</b><strong>Time Traveller</strong><small>Open the capsule</small></div>
+            <div class="fv-badge" data-badge="map"><b>⌖</b><strong>Digital Connector</strong><small>Use a workspace link</small></div>
+            <div class="fv-badge" data-badge="wish"><b>♡</b><strong>Kind Visitor</strong><small>Leave a wish</small></div>
+          </div><p class="fv-weather-note" id="fvBadgeCount" aria-live="polite">0 of 6 badges unlocked</p></div>
+        </section>
+
+        <!-- NEW: LOCAL VISITOR WISH BOOK -->
+        <section class="fv-extra-section" id="fv-leave-wish" aria-labelledby="fv-wish-title">
+          <div class="fv-extra-heading"><span>A LITTLE SPACE FOR KIND WORDS</span><h2 id="fv-wish-title">Leave a Wish for Farah.</h2><p>Leave a short message or a little encouragement. Messages are stored only in this browser and are not sent to Farah.</p></div>
+          <div class="fv-wish-card"><form class="fv-wish-form" id="fvWishForm"><label for="fvWishName">Your name (optional)</label><input id="fvWishName" maxlength="35" placeholder="Your name or nickname"><label for="fvWishMessage">Your message</label><textarea id="fvWishMessage" maxlength="180" required placeholder="Write a kind wish for Farah..."></textarea><button class="fv-action-button" type="submit">SAVE MY WISH ♡</button></form><div class="fv-wish-list" id="fvWishList" aria-live="polite"></div><p class="fv-weather-note">Privacy note: this is a local demo feature. It does not transmit or publish messages online.</p></div>
+        </section>
+
+        <!-- =================================
+             07. DAILY INSPIRATION
+        ================================== -->
+
+        <section class="inspiration-section" id="daily-inspiration" aria-label="Daily inspiration">
+
+
+            <div class="inspiration-orb"></div>
+
+
+            <div class="inspiration-content">
+
+                <div class="section-overline">
+                    07 / A MESSAGE FROM MY UNIVERSE
+                </div>
+
+
+                <div class="inspiration-icon">
+                    ✧
+                </div>
+
+
+                <h2>
+                    A Little Light<br>
+                    for Your Day.
+                </h2>
+
+
+                <p id="inspirationText">
+                    You don't have to have everything figured out.
+                    Just keep moving forward.
+                </p>
+
+
+                <button type="button" id="refreshInspiration">
+                    GENERATE A NEW MESSAGE ↻
+                </button>
+
+
+                <div class="inspiration-signature">
+                    A LITTLE REMINDER FROM FARAH ♡
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             08. ORIGINAL DIGITAL ARTWORK
+        ================================== -->
+       
+<!-- ORIGINAL DIGITAL ARTWORK: THE FARAHVERSE GALAXY -->
+
+<section class="farah-artwork-section"
+         id="farah-artwork" aria-label="Original animated Farahverse galaxy artwork">
+
+    <div class="section-overline">
+        08 / MY ORIGINAL DIGITAL ARTWORK
+    </div>
+
+    <div class="section-heading">
+
+        <h2>
+            Welcome to My
+            <span>Little Galaxy.</span>
+        </h2>
+
+        <p>
+            Every planet represents a different chapter
+            of my life. Explore the universe
+            and discover my story.
+        </p>
+
+    </div>
+
+
+    <div class="farah-galaxy-artwork">
+
+        <div class="galaxy-nebula"></div>
+
+        <div class="galaxy-orbit orbit-one"></div>
+        <div class="galaxy-orbit orbit-two"></div>
+        <div class="galaxy-orbit orbit-three"></div>
+
+
+        <!-- CENTRAL PLANET -->
+
+        <div class="galaxy-core">
+
+            <div class="galaxy-core-inner">
+
+                <span>F</span>
+
+                <small>FARAHVERSE</small>
+
+            </div>
+
+        </div>
+
+
+        <!-- DESTINATION PLANETS -->
+
+        <a href="biodata.html"
+           class="galaxy-planet planet-one">
+
+            <span>✧</span>
+            <strong>ME</strong>
+
+        </a>
+
+
+        <a href="education.html"
+           class="galaxy-planet planet-two">
+
+            <span>🎓</span>
+            <strong>EDUCATION</strong>
+
+        </a>
+
+
+        <a href="achievements.html"
+           class="galaxy-planet planet-three">
+
+            <span>🏆</span>
+            <strong>ACHIEVEMENTS</strong>
+
+        </a>
+
+
+        <a href="family.html"
+           class="galaxy-planet planet-four">
+
+            <span>♡</span>
+            <strong>FAMILY</strong>
+
+        </a>
+
+
+        <a href="friends.html"
+           class="galaxy-planet planet-five">
+
+            <span>∞</span>
+            <strong>FRIENDS</strong>
+
+        </a>
+
+
+        <a href="experience.html"
+           class="galaxy-planet planet-six">
+
+            <span>✦</span>
+            <strong>EXPERIENCE</strong>
+
+        </a>
+
+
+        <a href="gallery.html"
+           class="galaxy-planet planet-seven">
+
+            <span>📸</span>
+            <strong>GALLERY</strong>
+
+        </a>
+
+
+        <a href="contact.html"
+           class="galaxy-planet planet-eight">
+
+            <span>✉</span>
+            <strong>CONTACT</strong>
+
+        </a>
+
+
+        <!-- STARS -->
+
+        <span class="art-star art-star-one">✦</span>
+        <span class="art-star art-star-two">✧</span>
+        <span class="art-star art-star-three">✦</span>
+        <span class="art-star art-star-four">✧</span>
+
+    </div>
+
+
+    <div class="artwork-caption">
+
+        <span>✦ MY WORLD, MY STORY ✦</span>
+
+        <p>
+            Different chapters, one universe.
+            Every little detail represents a part of me.
+        </p>
+
+    </div>
+
+
+</section>
+
+<!-- =========================================
+     SPECIAL MULTIMEDIA
+     
+========================================= -->
+
+<!-- =========================================
+     FARAHVERSE AI CINEMATIC VIDEO
+========================================= -->
+
+<section class="uitm-special-section" id="my-journey-video">
+
+    <div class="uitm-special-content">
+
+        <div class="section-overline">
+            MY LIFE · MY STORY · MY UNIVERSE
+        </div>
+
+        <h2>
+            Every Chapter <span>Made Me.</span>
+        </h2>
+
+        <h3>
+            Farahverse: My Journey
+        </h3>
+
+        <p class="uitm-intro">
+            From childhood memories to school achievements,
+            working experiences, university life and meaningful
+            connections, every chapter has shaped who I am today.
+        </p>
+
+
+        <!-- AI CINEMATIC VIDEO PLAYER -->
+
+        <div class="uitm-video-card">
+
+            <div class="uitm-video-header">
+
+                <div>
+                    <span>FEATURED AI CINEMATIC FILM</span>
+
+                    <h3>✦ Farahverse: My Journey</h3>
+                </div>
+
+                <span class="uitm-official-label">
+                    MY STORY
+                </span>
+
+            </div>
+
+
+            <div class="uitm-video-wrapper">
+
+                <video
+                    id="farahverseJourneyVideo"
+                    controls
+                    preload="metadata"
+                    playsinline
+                    poster="images/profile.jpg">
+
+                    <source
+                        src="videos/farahverse-intro.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support HTML video.
+
+                </video>
+
+            </div>
+
+
+            <div class="uitm-video-footer">
+
+                <span>
+                    AN AI-CREATED VISUAL JOURNEY · FARAHVERSE 2026
+                </span>
+
+                <a
+                    href="videos/farahverse-intro.mp4"
+                    download="Farahverse-My-Journey.mp4">
+
+                    DOWNLOAD MY VIDEO ↓
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PERSONAL MESSAGE -->
+
+        <div class="uitm-personal-message">
+
+            <div class="uitm-message-symbol">✦</div>
+
+            <p>
+                Every chapter has its own story.
+                Every challenge has taught me something.
+                Every memory has become a part of me.
+
+                This is not just my journey.
+                This is my universe.
+            </p>
+
+            <span>
+                NURFARAH ELEYANA · KEEP GROWING, KEEP GOING ♡
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- =================================
+             09. FINAL CONNECTION
+        ================================== -->
+
+        <section class="farah-connect-section" id="final-connection" aria-label="Final connection">
+
+
+            <div class="section-overline">
+                09 / END OF TRANSMISSION
+            </div>
+
+
+            <div class="connect-visual">
+                ✦
+            </div>
+
+
+            <h2>
+                Every Universe<br>
+                Has a Story.
+            </h2>
+
+
+            <p>
+                Thank you for exploring mine.
+
+                I hope you found something meaningful
+                in this little universe of memories,
+                dreams and experiences.
+            </p>
+
+
+            <a href="contact.html" class="connect-button">
+                LET'S CONNECT ↗
+            </a>
+
+
+            <div class="connect-signature">
+                NURFARAH ELEYANA · WITH LOVE ♡
+            </div>
+
+
+        </section>
+
+
+        <noscript><p class="guideline-noscript">JavaScript is disabled. Page links and core content remain available, but interactive search, accessibility controls and animations may be limited.</p></noscript>
+
+    </main>
+
+
+
+    <!-- =================================
+         FLOATING MUSIC PLAYER
+    ================================== -->
+
+    <div class="floating-music-player" id="floatingMusicPlayer">
+
+
+        <div class="floating-music-art">
+            ♫
+        </div>
+
+
+        <div class="floating-music-info">
+
+            <span>SOUND EXPERIENCE</span>
+
+            <strong>Dreamscape Voyage</strong>
+
+            <small>Optional background music</small>
+
+        </div>
+
+        <div class="fv-music-extra" aria-label="Music progress and volume">
+            <input class="fv-music-progress" id="fvMusicProgress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Music progress">
+            <span class="fv-music-time" id="fvMusicTime">0:00 / 0:00</span>
+            <label for="fvMusicVolume">VOL</label>
+            <input class="fv-music-volume" id="fvMusicVolume" type="range" min="0" max="1" value="0.35" step="0.01" aria-label="Music volume">
+        </div>
+
+
+        <div class="floating-music-bars" id="floatingMusicBars">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+        <button
+            type="button"
+            id="musicToggle"
+            aria-label="Play or pause background music"
+            aria-pressed="false">
+
+            ▶
+
+        </button>
+
+
+        <button
+            type="button"
+            id="musicMute"
+            aria-label="Mute or unmute background music"
+            aria-pressed="false">
+
+            ♪
+
+        </button>
+
+
+        <button
+            type="button"
+            id="musicClose"
+            aria-label="Hide music player">
+
+            ×
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- AUDIO FILE -->
+
+    <audio
+        id="farahAudio"
+        aria-label="Optional dreamy background music"
+        src="audio/dreamscape-voyage.mp3"
+        preload="metadata"
+        loop>
+        Your browser does not support the audio element.
+    </audio>
+
+
+
+    <!-- =================================
+         09. SURPRISE MODAL
+    ================================== -->
+
+    <div class="farah-modal" id="farahModal">
+
+        <div class="farah-modal-card">
+
+            <button
+                type="button"
+                class="farah-modal-close"
+                id="farahModalClose"
+                aria-label="Close">
+
+                ×
+
+            </button>
+
+
+            <div class="modal-icon">
+                ✦
+            </div>
+
+
+            <span>A LITTLE MESSAGE FOR YOU</span>
+
+
+            <h2 id="modalMessage">
+                Keep believing in yourself.
+            </h2>
+
+
+            <div class="modal-decoration">
+                ♡ ✧ ♡
+            </div>
+
+
+            <button
+                type="button"
+                id="modalDone">
+
+                CLOSE MESSAGE
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         10. FOOTER
+    ================================== -->
+
+    <footer class="farah-footer">
+
+
+        <div class="footer-brand">
+            FARAH<span>VERSE</span>
+        </div>
+
+
+        <p>
+            A universe of memories, dreams and little moments.
+        </p>
+
+
+        <div class="footer-navigation">
+            <a href="index.html">Home</a>
+            <a href="biodata.html">Biodata</a>
+            <a href="experience.html">Experience</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="education.html">Education</a>
+            <a href="family.html">Family</a>
+            <a href="friends.html">Friends</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+
+        <div class="footer-divider"></div>
+
+
+        <p class="footer-credit">
+            Designed with ♡ by Nurfarah Eleyana
+        </p>
+
+
+        <p class="footer-copyright">
+            &copy; 2026 FARAHVERSE. ALL RIGHTS RESERVED.
+        </p>
+        <p class="guideline-date-record">
+            Website created: 2026 &nbsp;|&nbsp;
+            Last updated: <time datetime="2026-11-11">11 November 2026</time> &nbsp;|&nbsp;
+            Academic profile reference: 2026
+        </p>
+<!-- OWNERSHIP STATEMENT -->
+
+<div class="ownership-statement">
+
+    <p>
+        © 2026 <strong>Nurfarah Eleyana</strong>.
+        This personal website was designed,
+        developed and maintained by me
+        as part of the IMD318 Individual Project
+        at Universiti Teknologi MARA (UiTM) Segamat.
+    </p>
+
+</div>
+
+    </footer>
+
+
+
+    <!-- BACK TO TOP -->
+
+    <button
+        type="button"
+        class="farah-back-top"
+        id="farahBackTop"
+        aria-label="Back to top">
+
+        ↑
+
+    </button>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/home.js"></script>
+    <script src="js/home-guidelines.js" defer></script>
+
+    <!-- FARAHVERSE NEW INTERACTIVE FEATURES: STAR FACTS, QUIZ AND TIME CAPSULE -->
+    <script>
+    (() => {
+        "use strict";
+
+        // Unlock a Star: facts are grounded in the existing FARAHVERSE profile.
+        const starFacts = {
+            personality: { title: "A little about my personality", text: "I describe myself as an ambivert. I enjoy my own space as well as meaningful moments with the people around me." },
+            interests: { title: "The things I enjoy", text: "My interests include photography, spending time with family and friends, travelling and cooking." },
+            study: { title: "My current study chapter", text: "I am studying Diploma in Information Management (SI110) at UiTM Segamat, and my profile identifies Semester 5 as my final stage." }
+        };
+        const starDetail = document.getElementById("starDetail");
+        document.querySelectorAll("[data-star]").forEach(button => {
+            button.addEventListener("click", () => {
+                const fact = starFacts[button.dataset.star];
+                if (!fact || !starDetail) return;
+                document.getElementById("starDetailTitle").textContent = fact.title;
+                document.getElementById("starDetailText").textContent = fact.text;
+                starDetail.classList.add("is-visible");
+                starDetail.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "nearest" });
+            });
+        });
+
+        // Mini quiz: one objectively correct answer for each profile-based question.
+        const quizData = [
+            { q: "Which programme is Farah studying?", options: ["Diploma in Information Management", "Diploma in Business Studies", "Diploma in Computer Science", "Diploma in Office Management"], answer: 0, why: "Farah's academic profile identifies her programme as Diploma in Information Management (SI110)." },
+            { q: "Which university is part of Farah's current study journey?", options: ["Universiti Malaya", "Universiti Teknologi MARA", "Universiti Sains Malaysia", "Universiti Kebangsaan Malaysia"], answer: 1, why: "Her education profile states that she studies at UiTM Segamat." },
+            { q: "Which combination matches Farah's listed interests?", options: ["Photography, travelling and cooking", "Golf, fishing and painting", "Cycling, coding and gardening", "Singing, skating and camping"], answer: 0, why: "Photography, travelling and cooking are all listed among her interests." },
+            { q: "What is Farah's best friend's name on her personal website?", options: ["Aina", "Puyie", "Sofia", "Nadia"], answer: 1, why: "The Friends section identifies Puyie as her best friend." },
+            { q: "Which semester is shown as Farah's final diploma stage?", options: ["Semester 2", "Semester 3", "Semester 4", "Semester 5"], answer: 3, why: "The Home dashboard and academic profile identify Semester 5 as her final stage." }
+        ];
+        const questionEl = document.getElementById("quizQuestion");
+        const optionsEl = document.getElementById("quizOptions");
+        const feedbackEl = document.getElementById("quizFeedback");
+        const nextButton = document.getElementById("quizNextButton");
+        const countEl = document.getElementById("quizQuestionCount");
+        const scoreEl = document.getElementById("quizScoreLabel");
+        const progressEl = document.getElementById("quizProgressBar");
+        const playArea = document.getElementById("quizPlayArea");
+        const resultArea = document.getElementById("quizResult");
+        let quizIndex = 0;
+        let quizScore = 0;
+        let quizAnswered = false;
+
+        function renderQuizQuestion() {
+            if (!questionEl || !optionsEl) return;
+            const item = quizData[quizIndex];
+            quizAnswered = false;
+            countEl.textContent = `QUESTION ${quizIndex + 1} OF ${quizData.length}`;
+            scoreEl.textContent = `SCORE: ${quizScore}`;
+            progressEl.style.width = `${(quizIndex / quizData.length) * 100}%`;
+            questionEl.textContent = item.q;
+            optionsEl.replaceChildren();
+            feedbackEl.textContent = "Choose one answer to continue.";
+            nextButton.disabled = true;
+            item.options.forEach((label, index) => {
+                const option = document.createElement("button");
+                option.type = "button";
+                option.className = "fv-quiz-option";
+                option.textContent = `${String.fromCharCode(65 + index)}. ${label}`;
+                option.addEventListener("click", () => {
+                    if (quizAnswered) return;
+                    quizAnswered = true;
+                    const correct = index === item.answer;
+                    if (correct) quizScore++;
+                    Array.from(optionsEl.children).forEach((child, childIndex) => {
+                        child.disabled = true;
+                        if (childIndex === item.answer) child.style.borderColor = "#79e0b7";
+                        else if (childIndex === index) child.style.borderColor = "#ff9cba";
+                    });
+                    feedbackEl.textContent = `${correct ? "That's right! " : "Not quite. "}${item.why}`;
+                    scoreEl.textContent = `SCORE: ${quizScore}`;
+                    nextButton.disabled = false;
+                    nextButton.textContent = quizIndex === quizData.length - 1 ? "SEE MY RESULT ✦" : "NEXT QUESTION →";
+                });
+                optionsEl.appendChild(option);
+            });
+        }
+        function finishQuiz() {
+            playArea.hidden = true;
+            resultArea.classList.add("is-visible");
+            progressEl.style.width = "100%";
+            document.getElementById("quizFinalScore").textContent = `${quizScore} / ${quizData.length}`;
+            document.getElementById("quizResultMessage").textContent = quizScore === 5 ? "Amazing! You explored FARAHVERSE closely. Thank you for knowing these little details about me." : quizScore >= 3 ? "Well done! You discovered quite a few things about me. Explore the other pages to learn more." : "Thanks for playing! There are more stories and details waiting across the FARAHVERSE pages.";
+            countEl.textContent = "QUIZ COMPLETED";
+        }
+        if (nextButton) nextButton.addEventListener("click", () => {
+            if (!quizAnswered) return;
+            if (quizIndex < quizData.length - 1) { quizIndex++; renderQuizQuestion(); }
+            else finishQuiz();
+        });
+        const restartButton = document.getElementById("quizRestartButton");
+        if (restartButton) restartButton.addEventListener("click", () => {
+            quizIndex = 0; quizScore = 0; playArea.hidden = false; resultArea.classList.remove("is-visible"); nextButton.textContent = "NEXT QUESTION →"; renderQuizQuestion();
+        });
+        renderQuizQuestion();
+
+        // Future time capsule: reveal/hide the letter and update accessible state.
+        const capsuleButton = document.getElementById("capsuleToggle");
+        const capsuleLetter = document.getElementById("capsuleLetter");
+        if (capsuleButton && capsuleLetter) {
+            capsuleButton.addEventListener("click", () => {
+                const isOpen = capsuleButton.getAttribute("aria-expanded") === "true";
+                capsuleButton.setAttribute("aria-expanded", String(!isOpen));
+                capsuleLetter.classList.toggle("is-open", !isOpen);
+                capsuleLetter.setAttribute("aria-hidden", String(isOpen));
+                capsuleButton.textContent = isOpen ? "OPEN MY TIME CAPSULE ✧" : "CLOSE MY TIME CAPSULE ×";
+            });
+        }
+    })();
+    </script>
+
+
+    <!-- DIGITAL MOTION BACKGROUND SCRIPT -->
+    <script>
+    (() => {
+      const canvas = document.getElementById('digitalMotionCanvas');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (!canvas || reduceMotion.matches) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      let width = 0, height = 0, particles = [], raf = 0, lastFrame = 0;
+      const pointer = { x: -1000, y: -1000 };
+      const makeParticles = () => {
+        const count = Math.min(48, Math.max(22, Math.floor((width * height) / 36000)));
+        particles = Array.from({length: count}, () => ({
+          x: Math.random() * width, y: Math.random() * height,
+          vx: (Math.random() - .5) * .22, vy: (Math.random() - .5) * .22,
+          r: Math.random() * 1.5 + .45, pulse: Math.random() * Math.PI * 2
+        }));
+      };
+      const resize = () => {
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        width = window.innerWidth; height = window.innerHeight;
+        canvas.width = Math.floor(width * dpr); canvas.height = Math.floor(height * dpr);
+        canvas.style.width = width + 'px'; canvas.style.height = height + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0); makeParticles();
+      };
+      const draw = (time) => {
+        if (time - lastFrame < 32) { raf = requestAnimationFrame(draw); return; }
+        lastFrame = time; ctx.clearRect(0, 0, width, height);
+        const t = time * .0005;
+        particles.forEach((p, i) => {
+          p.x += p.vx + Math.sin(t + p.pulse) * .035; p.y += p.vy + Math.cos(t + p.pulse) * .025;
+          if (p.x < -10) p.x = width + 10; if (p.x > width + 10) p.x = -10;
+          if (p.y < -10) p.y = height + 10; if (p.y > height + 10) p.y = -10;
+          const glow = .45 + (Math.sin(t * 2 + p.pulse) + 1) * .22;
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(143,232,255,${glow})`; ctx.shadowBlur = 9; ctx.shadowColor = 'rgba(105,217,245,.7)'; ctx.fill(); ctx.shadowBlur = 0;
+          for (let j = i + 1; j < particles.length; j++) {
+            const q = particles[j], dx = p.x - q.x, dy = p.y - q.y, d = Math.hypot(dx, dy);
+            if (d < 105) { ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.strokeStyle = `rgba(112,160,255,${(1 - d / 105) * .13})`; ctx.lineWidth = .7; ctx.stroke(); }
+          }
+          const dx = p.x - pointer.x, dy = p.y - pointer.y, d = Math.hypot(dx, dy);
+          if (d < 145) { ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(pointer.x, pointer.y); ctx.strokeStyle = `rgba(190,175,255,${(1 - d / 145) * .22})`; ctx.lineWidth = .8; ctx.stroke(); }
+        });
+        raf = requestAnimationFrame(draw);
+      };
+      window.addEventListener('pointermove', e => { pointer.x = e.clientX; pointer.y = e.clientY; }, {passive:true});
+      window.addEventListener('pointerleave', () => { pointer.x = -1000; pointer.y = -1000; });
+      window.addEventListener('resize', resize, {passive:true});
+      reduceMotion.addEventListener?.('change', e => { if (e.matches) { cancelAnimationFrame(raf); ctx.clearRect(0,0,width,height); canvas.style.display='none'; } else { canvas.style.display='block'; resize(); raf=requestAnimationFrame(draw); } });
+      resize(); raf = requestAnimationFrame(draw);
+    })();
+    </script>
+
+
+    <!-- RESPONSIVE IMAGE MAP FIX: scales hotspot coordinates to the rendered image size -->
+    <script>
+    (() => {
+        const image = document.getElementById("farahverseMapImage");
+        const areas = document.querySelectorAll('#farahverseMap area[data-base-coords]');
+        if (!image || !areas.length) return;
+
+        const BASE_WIDTH = 1625;
+        const BASE_HEIGHT = 968;
+
+        function updateImageMapCoordinates() {
+            const rect = image.getBoundingClientRect();
+            if (!rect.width || !rect.height) return;
+            const scaleX = rect.width / BASE_WIDTH;
+            const scaleY = rect.height / BASE_HEIGHT;
+
+            areas.forEach(area => {
+                const original = area.dataset.baseCoords.split(',').map(Number);
+                const scaled = original.map((value, index) => {
+                    const scale = index % 2 === 0 ? scaleX : scaleY;
+                    return Math.round(value * scale);
+                });
+                area.coords = scaled.join(',');
+            });
+        }
+
+        if (image.complete) updateImageMapCoordinates();
+        else image.addEventListener('load', updateImageMapCoordinates, { once: true });
+
+        if ('ResizeObserver' in window) {
+            const observer = new ResizeObserver(updateImageMapCoordinates);
+            observer.observe(image);
+        } else {
+            window.addEventListener('resize', updateImageMapCoordinates, { passive: true });
+        }
+    })();
+    </script>
+
+
+    <!-- FARAHVERSE PREMIUM HYBRID INTERACTIONS -->
+    <script>
+    (() => {
+      "use strict";
+      const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // Loading screen: short, non-blocking intro; respects reduced-motion preference.
+      const loader = document.getElementById("fvLoadingScreen");
+      const loaderStatus = document.getElementById("fvLoaderStatus");
+      if (loader) {
+        const messages = ["INITIALIZING DIGITAL UNIVERSE...", "CONNECTING MEMORIES...", "WELCOME TO FARAHVERSE."];
+        let step = 0;
+        if (!reduceMotion && loaderStatus) {
+          const messageTimer = window.setInterval(() => {
+            step += 1;
+            loaderStatus.textContent = messages[Math.min(step, messages.length - 1)];
+            if (step >= messages.length - 1) window.clearInterval(messageTimer);
+          }, 420);
+        }
+        const hideLoader = () => loader.classList.add("is-loaded");
+        window.addEventListener("load", () => window.setTimeout(hideLoader, reduceMotion ? 0 : 180), { once: true });
+        window.setTimeout(hideLoader, 1400); // short fallback; do not hold the visitor on the loader
+      }
+
+      // Scroll reveal: only animate meaningful content blocks; no content is removed.
+      const revealTargets = document.querySelectorAll(
+        ".dashboard-widget, .fv-star-card, .fv-timeline, .fv-quiz-wrap, .fv-capsule-wrap, .guideline-learning-card, .guideline-list-card, .portal-card, .digital-workspace-map, .memory-feature, .guideline-external-card, .uitm-video-card, .farah-connect-section"
+      );
+      if (!reduceMotion && "IntersectionObserver" in window) {
+        document.documentElement.classList.add("fv-reveal-ready");
+        revealTargets.forEach((el, index) => {
+          el.classList.add("fv-reveal");
+          el.dataset.revealDelay = String(index % 4);
+        });
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-in-view");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.06, rootMargin: "0px 0px 0px 0px" });
+        revealTargets.forEach(el => revealObserver.observe(el));
+      }
+
+      // Custom cursor: enabled only for a fine pointer (mouse/trackpad).
+      const dot = document.getElementById("fvCursorDot");
+      const ring = document.getElementById("fvCursorRing");
+      const finePointer = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      if (dot && ring && finePointer && !reduceMotion) {
+        document.body.classList.add("fv-custom-cursor");
+        let x = -100, y = -100, rx = -100, ry = -100, cursorFrame = 0;
+        window.addEventListener("pointermove", event => {
+          x = event.clientX; y = event.clientY;
+          dot.style.left = x + "px"; dot.style.top = y + "px";
+          dot.classList.add("is-visible"); ring.classList.add("is-visible");
+          if (!cursorFrame) cursorFrame = requestAnimationFrame(function followRing() {
+            rx += (x - rx) * 0.22; ry += (y - ry) * 0.22;
+            ring.style.left = rx + "px"; ring.style.top = ry + "px";
+            if (Math.abs(x-rx) > .4 || Math.abs(y-ry) > .4) cursorFrame = requestAnimationFrame(followRing);
+            else cursorFrame = 0;
+          });
+        }, { passive: true });
+        window.addEventListener("pointerout", event => {
+          if (!event.relatedTarget) { dot.classList.remove("is-visible"); ring.classList.remove("is-visible"); }
+        });
+        document.querySelectorAll("a,button,input,textarea,select,area,[role='button']").forEach(el => {
+          el.addEventListener("pointerenter", () => ring.classList.add("is-hover"));
+          el.addEventListener("pointerleave", () => ring.classList.remove("is-hover"));
+        });
+      }
+
+      // Music progress, elapsed time and volume. Existing play/pause/mute controls remain intact.
+      const audio = document.getElementById("farahAudio");
+      const progress = document.getElementById("fvMusicProgress");
+      const timeLabel = document.getElementById("fvMusicTime");
+      const volume = document.getElementById("fvMusicVolume");
+      const formatTime = seconds => {
+        if (!Number.isFinite(seconds)) return "0:00";
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60).toString().padStart(2, "0");
+        return mins + ":" + secs;
+      };
+      if (audio && progress && timeLabel) {
+        const updateProgress = () => {
+          const duration = audio.duration || 0;
+          const current = audio.currentTime || 0;
+          progress.value = duration ? String((current / duration) * 100) : "0";
+          timeLabel.textContent = formatTime(current) + " / " + formatTime(duration);
+        };
+        audio.addEventListener("timeupdate", updateProgress);
+        audio.addEventListener("loadedmetadata", updateProgress);
+        audio.addEventListener("durationchange", updateProgress);
+        progress.addEventListener("input", () => {
+          if (Number.isFinite(audio.duration) && audio.duration > 0) audio.currentTime = (Number(progress.value) / 100) * audio.duration;
+        });
+        updateProgress();
+      }
+      if (audio && volume) {
+        volume.addEventListener("input", () => { audio.volume = Number(volume.value); audio.muted = false; });
+        audio.volume = Number(volume.value);
+      }
+
+      // Photo hover tilt: restrained, disabled on touch devices and reduced-motion settings.
+      if (!reduceMotion && finePointer) {
+        document.querySelectorAll(".hero-main-photo,.hero-float-photo,.memory-feature .home-photo").forEach(card => {
+          card.addEventListener("pointermove", event => {
+            const rect = card.getBoundingClientRect();
+            const px = (event.clientX - rect.left) / rect.width;
+            const py = (event.clientY - rect.top) / rect.height;
+            const tiltY = (px - .5) * 3;
+            const tiltX = (.5 - py) * 3;
+            card.style.transform = `perspective(850px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-2px)`;
+          });
+          card.addEventListener("pointerleave", () => { card.style.transform = ""; });
+        });
+      }
+
+      // Dashboard date/time uses Malaysia time and updates independently of other scripts.
+      const dashDate = document.getElementById("dashboardDate");
+      const dashTime = document.getElementById("dashboardTime");
+      const heroClock = document.getElementById("heroClock");
+      const heroDate = document.getElementById("heroDate");
+      const clockGreeting = document.getElementById("clockGreeting");
+      const tickDashboard = () => {
+        const now = new Date();
+        const dateText = new Intl.DateTimeFormat("en-MY", { timeZone: "Asia/Kuala_Lumpur", weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(now);
+        const timeText = new Intl.DateTimeFormat("en-MY", { timeZone: "Asia/Kuala_Lumpur", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true }).format(now);
+        if (dashDate) dashDate.textContent = dateText;
+        if (dashTime) dashTime.textContent = timeText;
+        if (heroClock) heroClock.textContent = timeText;
+        if (heroDate) heroDate.textContent = dateText.toUpperCase();
+        if (clockGreeting) {
+          const hour = Number(new Intl.DateTimeFormat("en-MY", { timeZone: "Asia/Kuala_Lumpur", hour: "2-digit", hour12: false }).format(now));
+          clockGreeting.textContent = hour < 12 ? "A FRESH MORNING IN MALAYSIA" : hour < 18 ? "MAKE TODAY MEANINGFUL" : "A LITTLE MAGIC TONIGHT";
+        }
+      };
+      tickDashboard();
+      window.setInterval(tickDashboard, 1000);
+    })();
+    </script>
+
+
+
+<!-- FARAHVERSE QUICK PANEL -->
+<div class="fv-quick-launcher" aria-label="Quick tools">
+  <div class="fv-quick-menu" id="fvQuickMenu">
+    <a class="fv-panel-button" href="#home">⌂ Home</a>
+    <a class="fv-panel-button" href="#site-tools">⌕ Search & Sitemap</a>
+    <a class="fv-panel-button" href="#fv-weather-section">☁ Weather</a>
+    <a class="fv-panel-button" href="#fv-visitor-badges">✦ My Badges</a>
+    <a class="fv-panel-button" href="#fv-leave-wish">♡ Leave a Wish</a>
+    <button class="fv-panel-button" type="button" id="fvOpenConsole">⌘ Command Console</button>
+    <button class="fv-panel-button" type="button" id="fvQuickMusic">♫ Music</button>
+  </div>
+  <button class="fv-quick-toggle" id="fvQuickToggle" type="button" aria-label="Open quick panel" aria-expanded="false">✧</button>
+</div>
+
+<!-- WELCOME NOTIFICATION -->
+<div class="fv-toast" id="fvWelcomeToast" role="status" aria-live="polite">
+  <div class="fv-toast-top"><strong>✦ Welcome to FARAHVERSE</strong><button type="button" id="fvToastClose" aria-label="Dismiss welcome message">×</button></div>
+  <p>A little universe of memories, dreams and meaningful moments. Explore at your own pace.</p>
+</div>
+
+<!-- COMMAND CONSOLE -->
+<div class="fv-console" id="fvConsole" role="dialog" aria-modal="true" aria-labelledby="fvConsoleTitle">
+  <div class="fv-console-window"><div class="fv-console-head"><strong id="fvConsoleTitle">⌘ FARAHVERSE COMMAND CONSOLE</strong><button class="fv-console-close" id="fvConsoleClose" type="button">CLOSE ×</button></div><div class="fv-console-output" id="fvConsoleOutput">Welcome, explorer. Type help to see available commands.\nCommands: home, about, gallery, education, experience, contact, weather, help</div><form class="fv-console-form" id="fvConsoleForm"><input class="fv-console-input" id="fvConsoleInput" autocomplete="off" placeholder="Type a command..." aria-label="Enter a FARAHVERSE command"><button type="submit">RUN</button></form></div>
+</div>
+
+<!-- PAGE TRANSITION OVERLAY -->
+<div class="fv-page-transition" id="fvPageTransition" aria-hidden="true"><div class="fv-transition-orb"></div><div class="fv-transition-label">TRAVELLING TO THE NEXT CHAPTER...</div></div>
+
+<!-- EASTER EGG MESSAGE -->
+<div class="fv-secret-message" id="fvSecretMessage" role="dialog" aria-modal="true" aria-label="Secret message"><div style="font-size:34px">✦ ♡ ✦</div><h3>You found a little secret!</h3><p>Thank you for exploring my universe. Remember: every little step is part of a beautiful journey.</p><button type="button" id="fvSecretClose">KEEP EXPLORING</button></div>
+
+<script id="fv-next-upgrade-script">
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const safeStore = {
+    get(key, fallback) { try { const v = localStorage.getItem(key); return v === null ? fallback : v; } catch (_) { return fallback; } },
+    set(key, value) { try { localStorage.setItem(key, value); } catch (_) {} }
+  };
+
+  // Welcome notification: show once per browser session.
+  const toast = $('fvWelcomeToast');
+  if (toast && !sessionStorage.getItem('fvWelcomeSeen')) {
+    window.setTimeout(() => toast.classList.add('show'), 900);
+    sessionStorage.setItem('fvWelcomeSeen', '1');
+  }
+  $('fvToastClose')?.addEventListener('click', () => toast?.classList.remove('show'));
+
+  // Quick panel.
+  const quickMenu = $('fvQuickMenu'), quickToggle = $('fvQuickToggle');
+  quickToggle?.addEventListener('click', () => {
+    const open = quickMenu.classList.toggle('open');
+    quickToggle.setAttribute('aria-expanded', String(open));
+    quickToggle.setAttribute('aria-label', open ? 'Close quick panel' : 'Open quick panel');
+  });
+  $('fvQuickMusic')?.addEventListener('click', () => {
+    const musicButton = $('musicToggle');
+    if (musicButton) musicButton.click();
+  });
+
+  // Command console.
+  const consoleLayer = $('fvConsole'), consoleInput = $('fvConsoleInput'), consoleOutput = $('fvConsoleOutput');
+  const openConsole = () => { consoleLayer?.classList.add('open'); consoleInput?.focus(); };
+  const closeConsole = () => consoleLayer?.classList.remove('open');
+  $('fvOpenConsole')?.addEventListener('click', openConsole);
+  $('fvConsoleClose')?.addEventListener('click', closeConsole);
+  consoleLayer?.addEventListener('click', e => { if (e.target === consoleLayer) closeConsole(); });
+  const commands = {
+    help: 'Available: home, about, gallery, education, experience, contact, weather, badges, wish, help.',
+    home: '#home', about: 'biodata.html', gallery: 'gallery.html', education: 'education.html',
+    experience: 'experience.html', contact: 'contact.html', weather: '#fv-weather-section',
+    badges: '#fv-visitor-badges', wish: '#fv-leave-wish'
+  };
+  $('fvConsoleForm')?.addEventListener('submit', e => {
+    e.preventDefault(); const command = (consoleInput.value || '').trim().toLowerCase();
+    const result = commands[command];
+    if (!result) { consoleOutput.textContent += `\n> ${command}\nCommand not found. Type help.`; }
+    else if (result.startsWith('#')) { closeConsole(); location.hash = result; }
+    else if (result.includes('.html')) { location.href = result; }
+    else { consoleOutput.textContent += `\n> ${command}\n${result}`; }
+    consoleOutput.scrollTop = consoleOutput.scrollHeight; consoleInput.value = '';
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeConsole(); $('fvSecretMessage')?.classList.remove('show'); } });
+
+  // Page transition for same-site HTML navigation only. Anchors, external links, mail and downloads are untouched.
+  const transition = $('fvPageTransition');
+  document.querySelectorAll('a[href]').forEach(link => {
+    link.addEventListener('click', e => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      if (link.target === '_blank' || link.hasAttribute('download')) return;
+      const href = link.getAttribute('href') || '';
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+      let url; try { url = new URL(href, location.href); } catch (_) { return; }
+      if (url.origin !== location.origin || !/\.html?$/i.test(url.pathname)) return;
+      e.preventDefault(); transition?.classList.add('active');
+      window.setTimeout(() => { location.href = url.href; }, 140);
+    });
+  });
+
+  // Logo Easter egg: five deliberate clicks.
+  let logoClicks = 0, logoTimer;
+  const logo = document.querySelector('.farah-logo');
+  const secret = $('fvSecretMessage');
+  logo?.addEventListener('click', e => {
+    e.preventDefault();
+    logoClicks++;
+    window.clearTimeout(logoTimer);
+    logoTimer = window.setTimeout(() => { logoClicks = 0; }, 1800);
+    if (logoClicks >= 5) { e.preventDefault(); logoClicks = 0; secret?.classList.add('show'); }
+  });
+  $('fvSecretClose')?.addEventListener('click', () => secret?.classList.remove('show'));
+
+  // Weather widget for Segamat using Open-Meteo (no API key required).
+  const weatherCode = code => {
+    if (code === 0) return ['Clear sky', '☀'];
+    if ([1,2,3].includes(code)) return ['Partly cloudy', '🌤'];
+    if ([45,48].includes(code)) return ['Foggy', '🌫'];
+    if ([51,53,55,56,57].includes(code)) return ['Drizzle', '🌦'];
+    if ([61,63,65,66,67,80,81,82].includes(code)) return ['Rain', '🌧'];
+    if ([71,73,75,77,85,86].includes(code)) return ['Snow / ice', '❄'];
+    if ([95,96,99].includes(code)) return ['Thunderstorm', '⛈'];
+    return ['Conditions unavailable', '☁'];
+  };
+  const loadWeather = async () => {
+    const note = $('fvWeatherNote');
+    try {
+      const url = 'https://api.open-meteo.com/v1/forecast?latitude=2.51&longitude=102.82&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&timezone=Asia%2FKuala_Lumpur';
+      const response = await fetch(url, { cache: 'no-store' });
+      if (!response.ok) throw new Error('Weather service unavailable');
+      const data = await response.json(), current = data.current;
+      const [description, icon] = weatherCode(current.weather_code);
+      $('fvWeatherTemp').textContent = `${Math.round(current.temperature_2m)}°C`;
+      $('fvWeatherDescription').textContent = description;
+      $('fvWeatherIcon').textContent = icon;
+      $('fvWeatherHumidity').textContent = `Humidity: ${current.relative_humidity_2m}%`;
+      $('fvWeatherWind').textContent = `Wind: ${Math.round(current.wind_speed_10m)} km/h`;
+      $('fvWeatherUpdated').textContent = `Updated: ${current.time.replace('T', ' ')}`;
+      if (note) note.textContent = 'Live conditions for Segamat, Johor. Source: Open-Meteo.';
+    } catch (_) {
+      $('fvWeatherDescription').textContent = 'Live weather is temporarily unavailable.';
+      $('fvWeatherNote').textContent = 'Please check your internet connection or refresh later. The rest of FARAHVERSE still works normally.';
+    }
+  };
+  loadWeather();
+
+  // Visitor badges saved locally on this browser.
+  const badgeKey = 'farahverseVisitorBadges';
+  let unlocked = {};
+  try { unlocked = JSON.parse(safeStore.get(badgeKey, '{}')) || {}; } catch (_) { unlocked = {}; }
+  const renderBadges = () => {
+    document.querySelectorAll('[data-badge]').forEach(el => el.classList.toggle('unlocked', !!unlocked[el.dataset.badge]));
+    const count = Object.values(unlocked).filter(Boolean).length;
+    if ($('fvBadgeCount')) $('fvBadgeCount').textContent = `${count} of 6 badges unlocked`;
+  };
+  const unlock = key => { if (!unlocked[key]) { unlocked[key] = true; safeStore.set(badgeKey, JSON.stringify(unlocked)); renderBadges(); } };
+  unlock('explorer');
+  document.querySelectorAll('a[href]').forEach(a => a.addEventListener('click', () => {
+    const href = a.getAttribute('href') || '';
+    if (/gallery|instagram|uitm|youtube|tiktok|spotify|mailto/i.test(href)) unlock('map');
+  }));
+  document.querySelectorAll('[data-star]').forEach(btn => btn.addEventListener('click', () => unlock('star')));
+  $('quizRestartButton')?.addEventListener('click', () => {});
+  $('quizNextButton')?.addEventListener('click', () => {
+    if ($('quizQuestionCount')?.textContent === 'QUIZ COMPLETED') unlock('quiz');
+  });
+  $('capsuleToggle')?.addEventListener('click', () => {
+    window.setTimeout(() => { if ($('capsuleToggle')?.getAttribute('aria-expanded') === 'true') unlock('capsule'); }, 0);
+  });
+
+  // Wish book: local-only storage, no network submission.
+  const wishKey = 'farahverseLocalWishes';
+  const wishForm = $('fvWishForm'), wishList = $('fvWishList');
+  const readWishes = () => { try { return JSON.parse(safeStore.get(wishKey, '[]')) || []; } catch (_) { return []; } };
+  const renderWishes = () => {
+    if (!wishList) return;
+    wishList.replaceChildren();
+    readWishes().slice(-5).reverse().forEach(wish => {
+      const item = document.createElement('div'); item.className = 'fv-wish-item';
+      const name = document.createElement('strong'); name.textContent = wish.name || 'A visitor';
+      const message = document.createElement('span'); message.textContent = ` — ${wish.message}`;
+      item.append(name, message); wishList.appendChild(item);
+    });
+  };
+  wishForm?.addEventListener('submit', e => {
+    e.preventDefault(); const message = $('fvWishMessage').value.trim();
+    if (!message) return;
+    const wishes = readWishes(); wishes.push({ name: $('fvWishName').value.trim().slice(0,35), message: message.slice(0,180), date: new Date().toISOString() });
+    safeStore.set(wishKey, JSON.stringify(wishes.slice(-20)));
+    wishForm.reset(); renderWishes(); unlock('wish');
+  });
+  renderWishes(); renderBadges();
+})();
+</script>
+
+
+<!-- UNIVERSAL IMAGE LIGHTBOX: all normal images open large; Image Map remains interactive -->
+<div class="fv-lightbox" id="fvImageLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Expanded image preview">
+  <button class="fv-lightbox-close" id="fvLightboxClose" type="button" aria-label="Close enlarged image">×</button>
+  <div class="fv-lightbox-stage">
+    <img class="fv-lightbox-image" id="fvLightboxImage" alt="">
+    <div class="fv-lightbox-caption" id="fvLightboxCaption"></div>
+  </div>
+</div>
+
+<script id="fv-image-lightbox-script">
+(() => {
+  'use strict';
+  const layer = document.getElementById('fvImageLightbox');
+  const large = document.getElementById('fvLightboxImage');
+  const caption = document.getElementById('fvLightboxCaption');
+  const closeButton = document.getElementById('fvLightboxClose');
+  if (!layer || !large || !closeButton) return;
+  let previousFocus = null;
+  const open = (img) => {
+    previousFocus = document.activeElement;
+    large.src = img.currentSrc || img.src;
+    large.alt = img.alt || 'Expanded photograph';
+    caption.textContent = img.alt || '';
+    layer.classList.add('open');
+    layer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeButton.focus({preventScroll:true});
+  };
+  const close = () => {
+    layer.classList.remove('open');
+    layer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    large.removeAttribute('src');
+    if (previousFocus && typeof previousFocus.focus === 'function') previousFocus.focus({preventScroll:true});
+  };
+  document.addEventListener('click', (event) => {
+    const img = event.target.closest('img');
+    if (!img || img.id === 'farahverseMapImage' || img.closest('#fvImageLightbox')) return;
+    if (img.closest('picture')) { /* use the clicked image's resolved source */ }
+    event.preventDefault();
+    event.stopPropagation();
+    open(img);
+  }, true);
+  closeButton.addEventListener('click', close);
+  layer.addEventListener('click', event => { if (event.target === layer) close(); });
+  large.addEventListener('click', event => event.stopPropagation());
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && layer.classList.contains('open')) close(); });
+})();
+</script>
+</body>
+</html>
